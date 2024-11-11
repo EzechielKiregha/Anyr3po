@@ -1,0 +1,1026 @@
+THIS WILL BE TO SOME AT THIS MOMENT
+[emaster@ezechiel ~]$ su
+Password: 
+[root@ezechiel emaster]# yum update
+CentOS Stream 8 - BaseOS                                                343 kB/s |  10 MB     00:30    0CentOS Stream 8 - Extras                                                999  B/s |  18 kB     00:18    
+CentOS Stream 8 - Extras common packages                                436  B/s | 7.7 kB     00:18    
+Dependencies resolved.
+========================================================================================================
+ Package                             Architecture  Version                       Repository        Size
+========================================================================================================
+Installing:
+ kernel                              x86_64        4.18.0-552.1.1.el8            baseos            10 M
+Upgrading:
+ bpftool                             x86_64        4.18.0-552.1.1.el8            baseos            11 M
+ cockpit-packagekit                  noarch        310.3-3.el8                   appstream        992 k
+ cockpit-storaged                    noarch        310.3-3.el8                   appstream        909 k
+ firefox                             x86_64        115.10.0-1.el8                appstream        115 M
+ hostname                            x86_64        3.20-7.el8.0.1                baseos            32 k
+ hyperv-daemons                      x86_64        0-1.31.20180415git.el8        appstream         13 k
+ hyperv-daemons-license              noarch        0-1.31.20180415git.el8        appstream         20 k
+ hypervfcopyd                        x86_64        0-1.31.20180415git.el8        appstream         19 k
+ hypervkvpd                          x86_64        0-1.31.20180415git.el8        appstream         28 k
+ hypervvssd                          x86_64        0-1.31.20180415git.el8        appstream         21 k
+ kernel-headers                      x86_64        4.18.0-552.1.1.el8            baseos            12 M
+ kernel-tools                        x86_64        4.18.0-552.1.1.el8            baseos            11 M
+ kernel-tools-libs                   x86_64        4.18.0-552.1.1.el8            baseos            10 M
+ libipa_hbac                         x86_64        2.9.4-3.el8                   baseos           128 k
+ libreswan                           x86_64        4.12-2.el8.3                  appstream        1.4 M
+ libsmbclient                        x86_64        4.19.4-4.el8                  baseos           156 k
+ libsss_autofs                       x86_64        2.9.4-3.el8                   baseos           130 k
+ libsss_certmap                      x86_64        2.9.4-3.el8                   baseos           186 k
+ libsss_idmap                        x86_64        2.9.4-3.el8                   baseos           132 k
+ libsss_nss_idmap                    x86_64        2.9.4-3.el8                   baseos           141 k
+ libsss_sudo                         x86_64        2.9.4-3.el8                   baseos           128 k
+ libtirpc                            x86_64        1.1.4-12.el8                  baseos           114 k
+ libwbclient                         x86_64        4.19.4-4.el8                  baseos           129 k
+ openscap                            x86_64        1.3.10-2.el8                  appstream        3.8 M
+ openscap-scanner                    x86_64        1.3.10-2.el8                  appstream         78 k
+ platform-python                     x86_64        3.6.8-62.el8                  baseos            88 k
+ policycoreutils                     x86_64        2.9-26.el8                    baseos           409 k
+ policycoreutils-python-utils        noarch        2.9-26.el8                    baseos           260 k
+ python3-idna                        noarch        2.5-7.el8                     baseos           106 k
+ python3-libs                        x86_64        3.6.8-62.el8                  baseos           8.4 M
+ python3-perf                        x86_64        4.18.0-552.1.1.el8            baseos            10 M
+ python3-policycoreutils             noarch        2.9-26.el8                    baseos           2.3 M
+ python3-sssdconfig                  noarch        2.9.4-3.el8                   baseos           154 k
+ samba-client                        x86_64        4.19.4-4.el8                  baseos           757 k
+ samba-client-libs                   x86_64        4.19.4-4.el8                  baseos           5.0 M
+ samba-common                        noarch        4.19.4-4.el8                  baseos           234 k
+ samba-common-libs                   x86_64        4.19.4-4.el8                  baseos           183 k
+ samba-libs                          x86_64        4.19.4-4.el8                  baseos           205 k
+ sssd                                x86_64        2.9.4-3.el8                   baseos           119 k
+ sssd-ad                             x86_64        2.9.4-3.el8                   baseos           314 k
+ sssd-client                         x86_64        2.9.4-3.el8                   baseos           251 k
+ sssd-common                         x86_64        2.9.4-3.el8                   baseos           1.7 M
+ sssd-common-pac                     x86_64        2.9.4-3.el8                   baseos           195 k
+ sssd-ipa                            x86_64        2.9.4-3.el8                   baseos           379 k
+ sssd-kcm                            x86_64        2.9.4-3.el8                   baseos           266 k
+ sssd-krb5                           x86_64        2.9.4-3.el8                   baseos           165 k
+ sssd-krb5-common                    x86_64        2.9.4-3.el8                   baseos           206 k
+ sssd-ldap                           x86_64        2.9.4-3.el8                   baseos           251 k
+ sssd-nfs-idmap                      x86_64        2.9.4-3.el8                   baseos           129 k
+ sssd-proxy                          x86_64        2.9.4-3.el8                   baseos           164 k
+ systemd                             x86_64        239-82.el8.1                  baseos           3.8 M
+ systemd-container                   x86_64        239-82.el8.1                  baseos           788 k
+ systemd-libs                        x86_64        239-82.el8.1                  baseos           1.1 M
+ systemd-pam                         x86_64        239-82.el8.1                  baseos           513 k
+ systemd-udev                        x86_64        239-82.el8.1                  baseos           1.6 M
+ xmlrpc-c                            x86_64        1.51.0-9.el8                  baseos           218 k
+ xmlrpc-c-client                     x86_64        1.51.0-9.el8                  baseos            41 k
+Installing dependencies:
+ kernel-core                         x86_64        4.18.0-552.1.1.el8            baseos            44 M
+ kernel-modules                      x86_64        4.18.0-552.1.1.el8            baseos            36 M
+Installing weak dependencies:
+ kernel-devel                        x86_64        4.18.0-552.1.1.el8            baseos            28 M
+
+Transaction Summary
+========================================================================================================
+Install   4 Packages
+Upgrade  57 Packages
+
+Total download size: 327 M
+Is this ok [y/N]: y
+Is this ok [y/N]: y
+Downloading Packages:
+(1/61): kernel-4.18.0-552.1.1.el8.x86_64.rpm                            448 kB/s |  10 MB     00:23    
+(2/61): kernel-devel-4.18.0-552.1.1.el8.x86_64.rpm                      942 kB/s |  28 MB     00:30    
+(3/61): cockpit-packagekit-310.3-3.el8.noarch.rpm                       321 kB/s | 992 kB     00:03    
+(4/61): cockpit-storaged-310.3-3.el8.noarch.rpm                         678 kB/s | 909 kB     00:01    
+(5/61): kernel-core-4.18.0-552.1.1.el8.x86_64.rpm                       458 kB/s |  44 MB     01:37    
+(6/61): hyperv-daemons-0-1.31.20180415git.el8.x86_64.rpm                2.1 kB/s |  13 kB     00:05    
+(7/61): hyperv-daemons-license-0-1.31.20180415git.el8.noarch.rpm         51 kB/s |  20 kB     00:00    
+(8/61): hypervfcopyd-0-1.31.20180415git.el8.x86_64.rpm                   59 kB/s |  19 kB     00:00    
+(9/61): hypervkvpd-0-1.31.20180415git.el8.x86_64.rpm                     78 kB/s |  28 kB     00:00    
+(10/61): hypervvssd-0-1.31.20180415git.el8.x86_64.rpm                    54 kB/s |  21 kB     00:00    
+(11/61): libreswan-4.12-2.el8.3.x86_64.rpm                              553 kB/s | 1.4 MB     00:02    
+(12/61): kernel-modules-4.18.0-552.1.1.el8.x86_64.rpm                   436 kB/s |  36 MB     01:25    
+(13/61): openscap-scanner-1.3.10-2.el8.x86_64.rpm                        53 kB/s |  78 kB     00:01    
+(14/61): openscap-1.3.10-2.el8.x86_64.rpm                               1.1 MB/s | 3.8 MB     00:03    
+(15/61): hostname-3.20-7.el8.0.1.x86_64.rpm                              91 kB/s |  32 kB     00:00    
+(16/61): kernel-headers-4.18.0-552.1.1.el8.x86_64.rpm                   1.1 MB/s |  12 MB     00:10    
+(17/61): bpftool-4.18.0-552.1.1.el8.x86_64.rpm                          325 kB/s |  11 MB     00:34    
+(18/61): kernel-tools-4.18.0-552.1.1.el8.x86_64.rpm                     463 kB/s |  11 MB     00:23    
+(19/61): libipa_hbac-2.9.4-3.el8.x86_64.rpm                              69 kB/s | 128 kB     00:01    
+(20/61): libsmbclient-4.19.4-4.el8.x86_64.rpm                           223 kB/s | 156 kB     00:00    
+(21/61): libsss_autofs-2.9.4-3.el8.x86_64.rpm                           228 kB/s | 130 kB     00:00    
+(22/61): libsss_certmap-2.9.4-3.el8.x86_64.rpm                          256 kB/s | 186 kB     00:00    
+(23/61): libsss_idmap-2.9.4-3.el8.x86_64.rpm                            188 kB/s | 132 kB     00:00    
+(24/61): libsss_nss_idmap-2.9.4-3.el8.x86_64.rpm                        227 kB/s | 141 kB     00:00    
+(25/61): libsss_sudo-2.9.4-3.el8.x86_64.rpm                             204 kB/s | 128 kB     00:00    
+(26/61): libtirpc-1.1.4-12.el8.x86_64.rpm                               297 kB/s | 114 kB     00:00    
+(27/61): libwbclient-4.19.4-4.el8.x86_64.rpm                            199 kB/s | 129 kB     00:00    
+(28/61): platform-python-3.6.8-62.el8.x86_64.rpm                        239 kB/s |  88 kB     00:00    
+(29/61): policycoreutils-2.9-26.el8.x86_64.rpm                          308 kB/s | 409 kB     00:01    
+(30/61): policycoreutils-python-utils-2.9-26.el8.noarch.rpm             366 kB/s | 260 kB     00:00    
+(31/61): python3-idna-2.5-7.el8.noarch.rpm                              282 kB/s | 106 kB     00:00    
+(32/61): kernel-tools-libs-4.18.0-552.1.1.el8.x86_64.rpm                871 kB/s |  10 MB     00:12    
+(33/61): python3-libs-3.6.8-62.el8.x86_64.rpm                           986 kB/s | 8.4 MB     00:08    
+(34/61): python3-policycoreutils-2.9-26.el8.noarch.rpm                  1.2 MB/s | 2.3 MB     00:01    
+(35/61): python3-sssdconfig-2.9.4-3.el8.noarch.rpm                      391 kB/s | 154 kB     00:00    
+(36/61): samba-client-4.19.4-4.el8.x86_64.rpm                           1.1 MB/s | 757 kB     00:00    
+(37/61): samba-client-libs-4.19.4-4.el8.x86_64.rpm                      1.1 MB/s | 5.0 MB     00:04    
+(38/61): samba-common-4.19.4-4.el8.noarch.rpm                            33 kB/s | 234 kB     00:07    
+(39/61): samba-common-libs-4.19.4-4.el8.x86_64.rpm                      273 kB/s | 183 kB     00:00    
+(40/61): samba-libs-4.19.4-4.el8.x86_64.rpm                             284 kB/s | 205 kB     00:00    
+(41/61): sssd-2.9.4-3.el8.x86_64.rpm                                    323 kB/s | 119 kB     00:00    
+(42/61): sssd-ad-2.9.4-3.el8.x86_64.rpm                                 472 kB/s | 314 kB     00:00    
+(43/61): sssd-client-2.9.4-3.el8.x86_64.rpm                             378 kB/s | 251 kB     00:00    
+(44/61): sssd-common-2.9.4-3.el8.x86_64.rpm                             687 kB/s | 1.7 MB     00:02    
+(45/61): sssd-common-pac-2.9.4-3.el8.x86_64.rpm                         527 kB/s | 195 kB     00:00    
+(46/61): sssd-ipa-2.9.4-3.el8.x86_64.rpm                                571 kB/s | 379 kB     00:00    
+(47/61): sssd-kcm-2.9.4-3.el8.x86_64.rpm                                633 kB/s | 266 kB     00:00    
+(48/61): python3-perf-4.18.0-552.1.1.el8.x86_64.rpm                     372 kB/s |  10 MB     00:28    
+(49/61): sssd-krb5-2.9.4-3.el8.x86_64.rpm                               174 kB/s | 165 kB     00:00    
+(50/61): sssd-ldap-2.9.4-3.el8.x86_64.rpm                               354 kB/s | 251 kB     00:00    
+(51/61): sssd-nfs-idmap-2.9.4-3.el8.x86_64.rpm                          349 kB/s | 129 kB     00:00    
+(52/61): sssd-proxy-2.9.4-3.el8.x86_64.rpm                              481 kB/s | 164 kB     00:00    
+(53/61): sssd-krb5-common-2.9.4-3.el8.x86_64.rpm                        100 kB/s | 206 kB     00:02    
+(54/61): firefox-115.10.0-1.el8.x86_64.rpm                              756 kB/s | 115 MB     02:36    
+(55/61): systemd-container-239-82.el8.1.x86_64.rpm                      304 kB/s | 788 kB     00:02    
+(56/61): systemd-pam-239-82.el8.1.x86_64.rpm                            388 kB/s | 513 kB     00:01    
+(57/61): systemd-239-82.el8.1.x86_64.rpm                                665 kB/s | 3.8 MB     00:05    
+(58/61): systemd-libs-239-82.el8.1.x86_64.rpm                           360 kB/s | 1.1 MB     00:03    
+(59/61): systemd-udev-239-82.el8.1.x86_64.rpm                           840 kB/s | 1.6 MB     00:01    
+(60/61): xmlrpc-c-client-1.51.0-9.el8.x86_64.rpm                        112 kB/s |  41 kB     00:00    
+(61/61): xmlrpc-c-1.51.0-9.el8.x86_64.rpm                               107 kB/s | 218 kB     00:02    
+--------------------------------------------------------------------------------------------------------
+Total                                                                   1.6 MB/s | 327 MB     03:29     
+CentOS Stream 8 - BaseOS                                                 53 kB/s | 1.6 kB     00:00    
+Importing GPG key 0x8483C65D:
+ Userid     : "CentOS (CentOS Official Signing Key) <security@centos.org>"
+ Fingerprint: 99DB 70FA E1D7 CE22 7FB6 4882 05B5 55B3 8483 C65D
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+Is this ok [y/N]: y
+Key imported successfully
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                1/1 
+  Running scriptlet: systemd-libs-239-82.el8.1.x86_64                                               1/1 
+  Upgrading        : systemd-libs-239-82.el8.1.x86_64                                             1/118 
+  Running scriptlet: systemd-libs-239-82.el8.1.x86_64                                             1/118 
+  Upgrading        : systemd-pam-239-82.el8.1.x86_64                                              2/118 
+  Running scriptlet: systemd-239-82.el8.1.x86_64                                                  3/118 
+  Upgrading        : systemd-239-82.el8.1.x86_64                                                  3/118 
+  Running scriptlet: systemd-239-82.el8.1.x86_64                                                  3/118 
+  Upgrading        : libsss_idmap-2.9.4-3.el8.x86_64                                              4/118 
+  Running scriptlet: libsss_idmap-2.9.4-3.el8.x86_64                                              4/118 
+  Upgrading        : libsss_certmap-2.9.4-3.el8.x86_64                                            5/118 
+  Running scriptlet: libsss_certmap-2.9.4-3.el8.x86_64                                            5/118 
+  Running scriptlet: samba-common-4.19.4-4.el8.noarch                                             6/118 
+  Upgrading        : samba-common-4.19.4-4.el8.noarch                                             6/118 
+  Running scriptlet: samba-common-4.19.4-4.el8.noarch                                             6/118 
+  Upgrading        : hyperv-daemons-license-0-1.31.20180415git.el8.noarch                         7/118 
+  Upgrading        : libtirpc-1.1.4-12.el8.x86_64                                                 8/118 
+  Running scriptlet: libtirpc-1.1.4-12.el8.x86_64                                                 8/118 
+  Running scriptlet: libwbclient-4.19.4-4.el8.x86_64                                              9/118 
+  Upgrading        : libwbclient-4.19.4-4.el8.x86_64                                              9/118 
+  Upgrading        : samba-common-libs-4.19.4-4.el8.x86_64                                       10/118 
+  Upgrading        : samba-client-libs-4.19.4-4.el8.x86_64                                       11/118 
+  Upgrading        : libsmbclient-4.19.4-4.el8.x86_64                                            12/118 
+  Upgrading        : platform-python-3.6.8-62.el8.x86_64                                         13/118 
+  Running scriptlet: platform-python-3.6.8-62.el8.x86_64                                         13/118 
+  Upgrading        : python3-libs-3.6.8-62.el8.x86_64                                            14/118 
+  Upgrading        : python3-sssdconfig-2.9.4-3.el8.noarch                                       15/118 
+  Upgrading        : hypervfcopyd-0-1.31.20180415git.el8.x86_64                                  16/118 
+  Running scriptlet: hypervfcopyd-0-1.31.20180415git.el8.x86_64                                  16/118 
+  Upgrading        : hypervkvpd-0-1.31.20180415git.el8.x86_64                                    17/118 
+  Running scriptlet: hypervkvpd-0-1.31.20180415git.el8.x86_64                                    17/118 
+  Upgrading        : hypervvssd-0-1.31.20180415git.el8.x86_64                                    18/118 
+  Running scriptlet: hypervvssd-0-1.31.20180415git.el8.x86_64                                    18/118 
+  Upgrading        : systemd-udev-239-82.el8.1.x86_64                                            19/118 
+  Running scriptlet: systemd-udev-239-82.el8.1.x86_64                                            19/118 
+  Installing       : kernel-core-4.18.0-552.1.1.el8.x86_64                                       20/118 
+  Running scriptlet: kernel-core-4.18.0-552.1.1.el8.x86_64                                       20/118 
+  Installing       : kernel-modules-4.18.0-552.1.1.el8.x86_64                                    21/118 
+  Running scriptlet: kernel-modules-4.18.0-552.1.1.el8.x86_64                                    21/118 
+  Upgrading        : xmlrpc-c-1.51.0-9.el8.x86_64                                                22/118 
+  Upgrading        : sssd-nfs-idmap-2.9.4-3.el8.x86_64                                           23/118 
+  Upgrading        : policycoreutils-2.9-26.el8.x86_64                                           24/118 
+  Running scriptlet: policycoreutils-2.9-26.el8.x86_64                                           24/118 
+  Upgrading        : python3-policycoreutils-2.9-26.el8.noarch                                   25/118 
+  Upgrading        : libsss_sudo-2.9.4-3.el8.x86_64                                              26/118 
+  Running scriptlet: libsss_sudo-2.9.4-3.el8.x86_64                                              26/118 
+  Upgrading        : libsss_nss_idmap-2.9.4-3.el8.x86_64                                         27/118 
+  Running scriptlet: libsss_nss_idmap-2.9.4-3.el8.x86_64                                         27/118 
+  Upgrading        : sssd-client-2.9.4-3.el8.x86_64                                              28/118 
+  Running scriptlet: sssd-client-2.9.4-3.el8.x86_64                                              28/118 
+  Upgrading        : libsss_autofs-2.9.4-3.el8.x86_64                                            29/118 
+  Running scriptlet: sssd-common-2.9.4-3.el8.x86_64                                              30/118 
+  Upgrading        : sssd-common-2.9.4-3.el8.x86_64                                              30/118 
+  Running scriptlet: sssd-common-2.9.4-3.el8.x86_64                                              30/118 
+  Running scriptlet: sssd-krb5-common-2.9.4-3.el8.x86_64                                         31/118 
+  Upgrading        : sssd-krb5-common-2.9.4-3.el8.x86_64                                         31/118 
+  Upgrading        : sssd-common-pac-2.9.4-3.el8.x86_64                                          32/118 
+  Upgrading        : sssd-ad-2.9.4-3.el8.x86_64                                                  33/118 
+  Upgrading        : sssd-krb5-2.9.4-3.el8.x86_64                                                34/118 
+  Upgrading        : sssd-ldap-2.9.4-3.el8.x86_64                                                35/118 
+  Running scriptlet: sssd-proxy-2.9.4-3.el8.x86_64                                               36/118 
+  Upgrading        : sssd-proxy-2.9.4-3.el8.x86_64                                               36/118 
+  Upgrading        : libipa_hbac-2.9.4-3.el8.x86_64                                              37/118 
+  Running scriptlet: libipa_hbac-2.9.4-3.el8.x86_64                                              37/118 
+  Running scriptlet: sssd-ipa-2.9.4-3.el8.x86_64                                                 38/118 
+  Upgrading        : sssd-ipa-2.9.4-3.el8.x86_64                                                 38/118 
+  Upgrading        : kernel-tools-libs-4.18.0-552.1.1.el8.x86_64                                 39/118 
+  Running scriptlet: kernel-tools-libs-4.18.0-552.1.1.el8.x86_64                                 39/118 
+  Upgrading        : openscap-1.3.10-2.el8.x86_64                                                40/118 
+  Running scriptlet: openscap-1.3.10-2.el8.x86_64                                                40/118 
+  Upgrading        : openscap-scanner-1.3.10-2.el8.x86_64                                        41/118 
+  Upgrading        : kernel-tools-4.18.0-552.1.1.el8.x86_64                                      42/118 
+  Running scriptlet: kernel-tools-4.18.0-552.1.1.el8.x86_64                                      42/118 
+  Upgrading        : sssd-2.9.4-3.el8.x86_64                                                     43/118 
+  Upgrading        : sssd-kcm-2.9.4-3.el8.x86_64                                                 44/118 
+  Running scriptlet: sssd-kcm-2.9.4-3.el8.x86_64                                                 44/118 
+  Upgrading        : policycoreutils-python-utils-2.9-26.el8.noarch                              45/118 
+  Upgrading        : xmlrpc-c-client-1.51.0-9.el8.x86_64                                         46/118 
+  Installing       : kernel-4.18.0-552.1.1.el8.x86_64                                            47/118 
+  Upgrading        : hyperv-daemons-0-1.31.20180415git.el8.x86_64                                48/118 
+  Upgrading        : python3-perf-4.18.0-552.1.1.el8.x86_64                                      49/118 
+  Upgrading        : cockpit-storaged-310.3-3.el8.noarch                                         50/118 
+  Upgrading        : libreswan-4.12-2.el8.3.x86_64                                               51/118 
+  Running scriptlet: libreswan-4.12-2.el8.3.x86_64                                               51/118 
+  Upgrading        : python3-idna-2.5-7.el8.noarch                                               52/118 
+  Upgrading        : samba-client-4.19.4-4.el8.x86_64                                            53/118 
+  Running scriptlet: samba-client-4.19.4-4.el8.x86_64                                            53/118 
+  Upgrading        : samba-libs-4.19.4-4.el8.x86_64                                              54/118 
+  Upgrading        : systemd-container-239-82.el8.1.x86_64                                       55/118 
+  Upgrading        : kernel-headers-4.18.0-552.1.1.el8.x86_64                                    56/118 
+  Upgrading        : hostname-3.20-7.el8.0.1.x86_64                                              57/118 
+  Running scriptlet: hostname-3.20-7.el8.0.1.x86_64                                              57/118 
+  Upgrading        : bpftool-4.18.0-552.1.1.el8.x86_64                                           58/118 
+  Upgrading        : firefox-115.10.0-1.el8.x86_64                                               59/118 
+  Running scriptlet: firefox-115.10.0-1.el8.x86_64                                               59/118 
+  Upgrading        : cockpit-packagekit-310.3-3.el8.noarch                                       60/118 
+  Installing       : kernel-devel-4.18.0-552.1.1.el8.x86_64                                      61/118 
+  Running scriptlet: kernel-devel-4.18.0-552.1.1.el8.x86_64                                      61/118 
+  Cleanup          : sssd-2.9.4-2.el8.x86_64                                                     62/118 
+  Cleanup          : hyperv-daemons-0-0.36.20180415git.el8.x86_64                                63/118 
+  Cleanup          : policycoreutils-python-utils-2.9-24.el8.noarch                              64/118 
+  Cleanup          : python3-policycoreutils-2.9-24.el8.noarch                                   65/118 
+  Cleanup          : python3-sssdconfig-2.9.4-2.el8.noarch                                       66/118 
+  Cleanup          : python3-idna-2.5-5.el8.noarch                                               67/118 
+  Cleanup          : cockpit-storaged-310.3-2.el8.noarch                                         68/118 
+  Cleanup          : kernel-headers-4.18.0-545.el8.x86_64                                        69/118 
+  Cleanup          : cockpit-packagekit-310.3-2.el8.noarch                                       70/118 
+  Running scriptlet: samba-client-4.19.4-3.el8.x86_64                                            71/118 
+  Cleanup          : samba-client-4.19.4-3.el8.x86_64                                            71/118 
+  Running scriptlet: samba-client-4.19.4-3.el8.x86_64                                            71/118 
+  Cleanup          : samba-libs-4.19.4-3.el8.x86_64                                              72/118 
+  Cleanup          : sssd-ipa-2.9.4-2.el8.x86_64                                                 73/118 
+  Cleanup          : sssd-ad-2.9.4-2.el8.x86_64                                                  74/118 
+  Cleanup          : libsmbclient-4.19.4-3.el8.x86_64                                            75/118 
+  Cleanup          : sssd-common-pac-2.9.4-2.el8.x86_64                                          76/118 
+  Cleanup          : sssd-ldap-2.9.4-2.el8.x86_64                                                77/118 
+  Running scriptlet: sssd-kcm-2.9.4-2.el8.x86_64                                                 78/118 
+  Cleanup          : sssd-kcm-2.9.4-2.el8.x86_64                                                 78/118 
+  Running scriptlet: sssd-kcm-2.9.4-2.el8.x86_64                                                 78/118 
+  Cleanup          : sssd-proxy-2.9.4-2.el8.x86_64                                               79/118 
+  Cleanup          : samba-client-libs-4.19.4-3.el8.x86_64                                       80/118 
+  Cleanup          : samba-common-libs-4.19.4-3.el8.x86_64                                       81/118 
+  Cleanup          : libwbclient-4.19.4-3.el8.x86_64                                             82/118 
+  Cleanup          : sssd-krb5-2.9.4-2.el8.x86_64                                                83/118 
+  Cleanup          : systemd-udev-239-82.el8.x86_64                                              84/118 
+  Running scriptlet: systemd-udev-239-82.el8.x86_64                                              84/118 
+  Cleanup          : systemd-container-239-82.el8.x86_64                                         85/118 
+  Running scriptlet: libreswan-4.12-2.el8.x86_64                                                 86/118 
+  Cleanup          : libreswan-4.12-2.el8.x86_64                                                 86/118 
+  Running scriptlet: libreswan-4.12-2.el8.x86_64                                                 86/118 
+  Cleanup          : sssd-krb5-common-2.9.4-2.el8.x86_64                                         87/118 
+  Running scriptlet: sssd-common-2.9.4-2.el8.x86_64                                              88/118 
+  Cleanup          : sssd-common-2.9.4-2.el8.x86_64                                              88/118 
+  Running scriptlet: sssd-common-2.9.4-2.el8.x86_64                                              88/118 
+  Running scriptlet: sssd-client-2.9.4-2.el8.x86_64                                              89/118 
+  Cleanup          : sssd-client-2.9.4-2.el8.x86_64                                              89/118 
+  Running scriptlet: sssd-client-2.9.4-2.el8.x86_64                                              89/118 
+  Running scriptlet: hypervfcopyd-0-0.36.20180415git.el8.x86_64                                  90/118 
+  Cleanup          : hypervfcopyd-0-0.36.20180415git.el8.x86_64                                  90/118 
+  Running scriptlet: hypervfcopyd-0-0.36.20180415git.el8.x86_64                                  90/118 
+  Running scriptlet: hypervkvpd-0-0.36.20180415git.el8.x86_64                                    91/118 
+  Cleanup          : hypervkvpd-0-0.36.20180415git.el8.x86_64                                    91/118 
+  Running scriptlet: hypervkvpd-0-0.36.20180415git.el8.x86_64                                    91/118 
+  Running scriptlet: hypervvssd-0-0.36.20180415git.el8.x86_64                                    92/118 
+  Cleanup          : hypervvssd-0-0.36.20180415git.el8.x86_64                                    92/118 
+  Running scriptlet: hypervvssd-0-0.36.20180415git.el8.x86_64                                    92/118 
+  Cleanup          : xmlrpc-c-client-1.51.0-8.el8.x86_64                                         93/118 
+  Running scriptlet: kernel-tools-4.18.0-545.el8.x86_64                                          94/118 
+  Cleanup          : kernel-tools-4.18.0-545.el8.x86_64                                          94/118 
+  Running scriptlet: kernel-tools-4.18.0-545.el8.x86_64                                          94/118 
+  Cleanup          : python3-perf-4.18.0-545.el8.x86_64                                          95/118 
+  Cleanup          : platform-python-3.6.8-59.el8.x86_64                                         96/118 
+  Running scriptlet: platform-python-3.6.8-59.el8.x86_64                                         96/118 
+  Cleanup          : python3-libs-3.6.8-59.el8.x86_64                                            97/118 
+  Cleanup          : openscap-scanner-1.3.8-1.el8.x86_64                                         98/118 
+  Cleanup          : samba-common-4.19.4-3.el8.noarch                                            99/118 
+  Cleanup          : hyperv-daemons-license-0-0.36.20180415git.el8.noarch                       100/118 
+  Running scriptlet: systemd-239-82.el8.x86_64                                                  101/118 
+  Cleanup          : systemd-239-82.el8.x86_64                                                  101/118 
+  Cleanup          : systemd-libs-239-82.el8.x86_64                                             102/118 
+  Cleanup          : systemd-pam-239-82.el8.x86_64                                              103/118 
+  Cleanup          : openscap-1.3.8-1.el8.x86_64                                                104/118 
+  Running scriptlet: openscap-1.3.8-1.el8.x86_64                                                104/118 
+  Cleanup          : libtirpc-1.1.4-11.el8.x86_64                                               105/118 
+  Running scriptlet: libtirpc-1.1.4-11.el8.x86_64                                               105/118 
+  Cleanup          : kernel-tools-libs-4.18.0-545.el8.x86_64                                    106/118 
+  Running scriptlet: kernel-tools-libs-4.18.0-545.el8.x86_64                                    106/118 
+  Cleanup          : xmlrpc-c-1.51.0-8.el8.x86_64                                               107/118 
+  Cleanup          : libsss_idmap-2.9.4-2.el8.x86_64                                            108/118 
+  Running scriptlet: libsss_idmap-2.9.4-2.el8.x86_64                                            108/118 
+  Cleanup          : libsss_nss_idmap-2.9.4-2.el8.x86_64                                        109/118 
+  Running scriptlet: libsss_nss_idmap-2.9.4-2.el8.x86_64                                        109/118 
+  Cleanup          : libsss_certmap-2.9.4-2.el8.x86_64                                          110/118 
+  Running scriptlet: libsss_certmap-2.9.4-2.el8.x86_64                                          110/118 
+  Cleanup          : libsss_autofs-2.9.4-2.el8.x86_64                                           111/118 
+  Cleanup          : libsss_sudo-2.9.4-2.el8.x86_64                                             112/118 
+  Running scriptlet: libsss_sudo-2.9.4-2.el8.x86_64                                             112/118 
+  Cleanup          : sssd-nfs-idmap-2.9.4-2.el8.x86_64                                          113/118 
+  Cleanup          : libipa_hbac-2.9.4-2.el8.x86_64                                             114/118 
+  Running scriptlet: libipa_hbac-2.9.4-2.el8.x86_64                                             114/118 
+  Running scriptlet: policycoreutils-2.9-24.el8.x86_64                                          115/118 
+  Cleanup          : policycoreutils-2.9-24.el8.x86_64                                          115/118 
+  Running scriptlet: hostname-3.20-6.el8.x86_64                                                 116/118 
+  Cleanup          : hostname-3.20-6.el8.x86_64                                                 116/118 
+  Cleanup          : bpftool-4.18.0-545.el8.x86_64                                              117/118 
+  Running scriptlet: firefox-115.9.1-1.el8.x86_64                                               118/118 
+  Cleanup          : firefox-115.9.1-1.el8.x86_64                                               118/118 
+  Running scriptlet: firefox-115.9.1-1.el8.x86_64                                               118/118 
+  Running scriptlet: kernel-core-4.18.0-552.1.1.el8.x86_64                                      118/118 
+  Running scriptlet: kernel-modules-4.18.0-552.1.1.el8.x86_64                                   118/118 
+  Running scriptlet: sssd-common-2.9.4-3.el8.x86_64                                             118/118 
+  Running scriptlet: firefox-115.10.0-1.el8.x86_64                                              118/118 
+  Running scriptlet: firefox-115.9.1-1.el8.x86_64                                               118/118 
+  Running scriptlet: systemd-239-82.el8.1.x86_64                                                118/118 
+  Running scriptlet: systemd-udev-239-82.el8.1.x86_64                                           118/118 
+  Verifying        : kernel-4.18.0-552.1.1.el8.x86_64                                             1/118 
+  Verifying        : kernel-core-4.18.0-552.1.1.el8.x86_64                                        2/118 
+  Verifying        : kernel-devel-4.18.0-552.1.1.el8.x86_64                                       3/118 
+  Verifying        : kernel-modules-4.18.0-552.1.1.el8.x86_64                                     4/118 
+  Verifying        : cockpit-packagekit-310.3-3.el8.noarch                                        5/118 
+  Verifying        : cockpit-packagekit-310.3-2.el8.noarch                                        6/118 
+  Verifying        : cockpit-storaged-310.3-3.el8.noarch                                          7/118 
+  Verifying        : cockpit-storaged-310.3-2.el8.noarch                                          8/118 
+  Verifying        : firefox-115.10.0-1.el8.x86_64                                                9/118 
+  Verifying        : firefox-115.9.1-1.el8.x86_64                                                10/118 
+  Verifying        : hyperv-daemons-0-1.31.20180415git.el8.x86_64                                11/118 
+  Verifying        : hyperv-daemons-0-0.36.20180415git.el8.x86_64                                12/118 
+  Verifying        : hyperv-daemons-license-0-1.31.20180415git.el8.noarch                        13/118 
+  Verifying        : hyperv-daemons-license-0-0.36.20180415git.el8.noarch                        14/118 
+  Verifying        : hypervfcopyd-0-1.31.20180415git.el8.x86_64                                  15/118 
+  Verifying        : hypervfcopyd-0-0.36.20180415git.el8.x86_64                                  16/118 
+  Verifying        : hypervkvpd-0-1.31.20180415git.el8.x86_64                                    17/118 
+  Verifying        : hypervkvpd-0-0.36.20180415git.el8.x86_64                                    18/118 
+  Verifying        : hypervvssd-0-1.31.20180415git.el8.x86_64                                    19/118 
+  Verifying        : hypervvssd-0-0.36.20180415git.el8.x86_64                                    20/118 
+  Verifying        : libreswan-4.12-2.el8.3.x86_64                                               21/118 
+  Verifying        : libreswan-4.12-2.el8.x86_64                                                 22/118 
+  Verifying        : openscap-1.3.10-2.el8.x86_64                                                23/118 
+  Verifying        : openscap-1.3.8-1.el8.x86_64                                                 24/118 
+  Verifying        : openscap-scanner-1.3.10-2.el8.x86_64                                        25/118 
+  Verifying        : openscap-scanner-1.3.8-1.el8.x86_64                                         26/118 
+  Verifying        : bpftool-4.18.0-552.1.1.el8.x86_64                                           27/118 
+  Verifying        : bpftool-4.18.0-545.el8.x86_64                                               28/118 
+  Verifying        : hostname-3.20-7.el8.0.1.x86_64                                              29/118 
+  Verifying        : hostname-3.20-6.el8.x86_64                                                  30/118 
+  Verifying        : kernel-headers-4.18.0-552.1.1.el8.x86_64                                    31/118 
+  Verifying        : kernel-headers-4.18.0-545.el8.x86_64                                        32/118 
+  Verifying        : kernel-tools-4.18.0-552.1.1.el8.x86_64                                      33/118 
+  Verifying        : kernel-tools-4.18.0-545.el8.x86_64                                          34/118 
+  Verifying        : kernel-tools-libs-4.18.0-552.1.1.el8.x86_64                                 35/118 
+  Verifying        : kernel-tools-libs-4.18.0-545.el8.x86_64                                     36/118 
+  Verifying        : libipa_hbac-2.9.4-3.el8.x86_64                                              37/118 
+  Verifying        : libipa_hbac-2.9.4-2.el8.x86_64                                              38/118 
+  Verifying        : libsmbclient-4.19.4-4.el8.x86_64                                            39/118 
+  Verifying        : libsmbclient-4.19.4-3.el8.x86_64                                            40/118 
+  Verifying        : libsss_autofs-2.9.4-3.el8.x86_64                                            41/118 
+  Verifying        : libsss_autofs-2.9.4-2.el8.x86_64                                            42/118 
+  Verifying        : libsss_certmap-2.9.4-3.el8.x86_64                                           43/118 
+  Verifying        : libsss_certmap-2.9.4-2.el8.x86_64                                           44/118 
+  Verifying        : libsss_idmap-2.9.4-3.el8.x86_64                                             45/118 
+  Verifying        : libsss_idmap-2.9.4-2.el8.x86_64                                             46/118 
+  Verifying        : libsss_nss_idmap-2.9.4-3.el8.x86_64                                         47/118 
+  Verifying        : libsss_nss_idmap-2.9.4-2.el8.x86_64                                         48/118 
+  Verifying        : libsss_sudo-2.9.4-3.el8.x86_64                                              49/118 
+  Verifying        : libsss_sudo-2.9.4-2.el8.x86_64                                              50/118 
+  Verifying        : libtirpc-1.1.4-12.el8.x86_64                                                51/118 
+  Verifying        : libtirpc-1.1.4-11.el8.x86_64                                                52/118 
+  Verifying        : libwbclient-4.19.4-4.el8.x86_64                                             53/118 
+  Verifying        : libwbclient-4.19.4-3.el8.x86_64                                             54/118 
+  Verifying        : platform-python-3.6.8-62.el8.x86_64                                         55/118 
+  Verifying        : platform-python-3.6.8-59.el8.x86_64                                         56/118 
+  Verifying        : policycoreutils-2.9-26.el8.x86_64                                           57/118 
+  Verifying        : policycoreutils-2.9-24.el8.x86_64                                           58/118 
+  Verifying        : policycoreutils-python-utils-2.9-26.el8.noarch                              59/118 
+  Verifying        : policycoreutils-python-utils-2.9-24.el8.noarch                              60/118 
+  Verifying        : python3-idna-2.5-7.el8.noarch                                               61/118 
+  Verifying        : python3-idna-2.5-5.el8.noarch                                               62/118 
+  Verifying        : python3-libs-3.6.8-62.el8.x86_64                                            63/118 
+  Verifying        : python3-libs-3.6.8-59.el8.x86_64                                            64/118 
+  Verifying        : python3-perf-4.18.0-552.1.1.el8.x86_64                                      65/118 
+  Verifying        : python3-perf-4.18.0-545.el8.x86_64                                          66/118 
+  Verifying        : python3-policycoreutils-2.9-26.el8.noarch                                   67/118 
+  Verifying        : python3-policycoreutils-2.9-24.el8.noarch                                   68/118 
+  Verifying        : python3-sssdconfig-2.9.4-3.el8.noarch                                       69/118 
+  Verifying        : python3-sssdconfig-2.9.4-2.el8.noarch                                       70/118 
+  Verifying        : samba-client-4.19.4-4.el8.x86_64                                            71/118 
+  Verifying        : samba-client-4.19.4-3.el8.x86_64                                            72/118 
+  Verifying        : samba-client-libs-4.19.4-4.el8.x86_64                                       73/118 
+  Verifying        : samba-client-libs-4.19.4-3.el8.x86_64                                       74/118 
+  Verifying        : samba-common-4.19.4-4.el8.noarch                                            75/118 
+  Verifying        : samba-common-4.19.4-3.el8.noarch                                            76/118 
+  Verifying        : samba-common-libs-4.19.4-4.el8.x86_64                                       77/118 
+  Verifying        : samba-common-libs-4.19.4-3.el8.x86_64                                       78/118 
+  Verifying        : samba-libs-4.19.4-4.el8.x86_64                                              79/118 
+  Verifying        : samba-libs-4.19.4-3.el8.x86_64                                              80/118 
+  Verifying        : sssd-2.9.4-3.el8.x86_64                                                     81/118 
+  Verifying        : sssd-2.9.4-2.el8.x86_64                                                     82/118 
+  Verifying        : sssd-ad-2.9.4-3.el8.x86_64                                                  83/118 
+  Verifying        : sssd-ad-2.9.4-2.el8.x86_64                                                  84/118 
+  Verifying        : sssd-client-2.9.4-3.el8.x86_64                                              85/118 
+  Verifying        : sssd-client-2.9.4-2.el8.x86_64                                              86/118 
+  Verifying        : sssd-common-2.9.4-3.el8.x86_64                                              87/118 
+  Verifying        : sssd-common-2.9.4-2.el8.x86_64                                              88/118 
+  Verifying        : sssd-common-pac-2.9.4-3.el8.x86_64                                          89/118 
+  Verifying        : sssd-common-pac-2.9.4-2.el8.x86_64                                          90/118 
+  Verifying        : sssd-ipa-2.9.4-3.el8.x86_64                                                 91/118 
+  Verifying        : sssd-ipa-2.9.4-2.el8.x86_64                                                 92/118 
+  Verifying        : sssd-kcm-2.9.4-3.el8.x86_64                                                 93/118 
+  Verifying        : sssd-kcm-2.9.4-2.el8.x86_64                                                 94/118 
+  Verifying        : sssd-krb5-2.9.4-3.el8.x86_64                                                95/118 
+  Verifying        : sssd-krb5-2.9.4-2.el8.x86_64                                                96/118 
+  Verifying        : sssd-krb5-common-2.9.4-3.el8.x86_64                                         97/118 
+  Verifying        : sssd-krb5-common-2.9.4-2.el8.x86_64                                         98/118 
+  Verifying        : sssd-ldap-2.9.4-3.el8.x86_64                                                99/118 
+  Verifying        : sssd-ldap-2.9.4-2.el8.x86_64                                               100/118 
+  Verifying        : sssd-nfs-idmap-2.9.4-3.el8.x86_64                                          101/118 
+  Verifying        : sssd-nfs-idmap-2.9.4-2.el8.x86_64                                          102/118 
+  Verifying        : sssd-proxy-2.9.4-3.el8.x86_64                                              103/118 
+  Verifying        : sssd-proxy-2.9.4-2.el8.x86_64                                              104/118 
+  Verifying        : systemd-239-82.el8.1.x86_64                                                105/118 
+  Verifying        : systemd-239-82.el8.x86_64                                                  106/118 
+  Verifying        : systemd-container-239-82.el8.1.x86_64                                      107/118 
+  Verifying        : systemd-container-239-82.el8.x86_64                                        108/118 
+  Verifying        : systemd-libs-239-82.el8.1.x86_64                                           109/118 
+  Verifying        : systemd-libs-239-82.el8.x86_64                                             110/118 
+  Verifying        : systemd-pam-239-82.el8.1.x86_64                                            111/118 
+  Verifying        : systemd-pam-239-82.el8.x86_64                                              112/118 
+  Verifying        : systemd-udev-239-82.el8.1.x86_64                                           113/118 
+  Verifying        : systemd-udev-239-82.el8.x86_64                                             114/118 
+  Verifying        : xmlrpc-c-1.51.0-9.el8.x86_64                                               115/118 
+  Verifying        : xmlrpc-c-1.51.0-8.el8.x86_64                                               116/118 
+  Verifying        : xmlrpc-c-client-1.51.0-9.el8.x86_64                                        117/118 
+  Verifying        : xmlrpc-c-client-1.51.0-8.el8.x86_64                                        118/118 
+
+Upgraded:
+  bpftool-4.18.0-552.1.1.el8.x86_64                     cockpit-packagekit-310.3-3.el8.noarch          
+  cockpit-storaged-310.3-3.el8.noarch                   firefox-115.10.0-1.el8.x86_64                  
+  hostname-3.20-7.el8.0.1.x86_64                        hyperv-daemons-0-1.31.20180415git.el8.x86_64   
+  hyperv-daemons-license-0-1.31.20180415git.el8.noarch  hypervfcopyd-0-1.31.20180415git.el8.x86_64     
+  hypervkvpd-0-1.31.20180415git.el8.x86_64              hypervvssd-0-1.31.20180415git.el8.x86_64       
+  kernel-headers-4.18.0-552.1.1.el8.x86_64              kernel-tools-4.18.0-552.1.1.el8.x86_64         
+  kernel-tools-libs-4.18.0-552.1.1.el8.x86_64           libipa_hbac-2.9.4-3.el8.x86_64                 
+  libreswan-4.12-2.el8.3.x86_64                         libsmbclient-4.19.4-4.el8.x86_64               
+  libsss_autofs-2.9.4-3.el8.x86_64                      libsss_certmap-2.9.4-3.el8.x86_64              
+  libsss_idmap-2.9.4-3.el8.x86_64                       libsss_nss_idmap-2.9.4-3.el8.x86_64            
+  libsss_sudo-2.9.4-3.el8.x86_64                        libtirpc-1.1.4-12.el8.x86_64                   
+  libwbclient-4.19.4-4.el8.x86_64                       openscap-1.3.10-2.el8.x86_64                   
+  openscap-scanner-1.3.10-2.el8.x86_64                  platform-python-3.6.8-62.el8.x86_64            
+  policycoreutils-2.9-26.el8.x86_64                     policycoreutils-python-utils-2.9-26.el8.noarch 
+  python3-idna-2.5-7.el8.noarch                         python3-libs-3.6.8-62.el8.x86_64               
+  python3-perf-4.18.0-552.1.1.el8.x86_64                python3-policycoreutils-2.9-26.el8.noarch      
+  python3-sssdconfig-2.9.4-3.el8.noarch                 samba-client-4.19.4-4.el8.x86_64               
+  samba-client-libs-4.19.4-4.el8.x86_64                 samba-common-4.19.4-4.el8.noarch               
+  samba-common-libs-4.19.4-4.el8.x86_64                 samba-libs-4.19.4-4.el8.x86_64                 
+  sssd-2.9.4-3.el8.x86_64                               sssd-ad-2.9.4-3.el8.x86_64                     
+  sssd-client-2.9.4-3.el8.x86_64                        sssd-common-2.9.4-3.el8.x86_64                 
+  sssd-common-pac-2.9.4-3.el8.x86_64                    sssd-ipa-2.9.4-3.el8.x86_64                    
+  sssd-kcm-2.9.4-3.el8.x86_64                           sssd-krb5-2.9.4-3.el8.x86_64                   
+  sssd-krb5-common-2.9.4-3.el8.x86_64                   sssd-ldap-2.9.4-3.el8.x86_64                   
+  sssd-nfs-idmap-2.9.4-3.el8.x86_64                     sssd-proxy-2.9.4-3.el8.x86_64                  
+  systemd-239-82.el8.1.x86_64                           systemd-container-239-82.el8.1.x86_64          
+  systemd-libs-239-82.el8.1.x86_64                      systemd-pam-239-82.el8.1.x86_64                
+  systemd-udev-239-82.el8.1.x86_64                      xmlrpc-c-1.51.0-9.el8.x86_64                   
+  xmlrpc-c-client-1.51.0-9.el8.x86_64                  
+Installed:
+  kernel-4.18.0-552.1.1.el8.x86_64                  kernel-core-4.18.0-552.1.1.el8.x86_64              
+  kernel-devel-4.18.0-552.1.1.el8.x86_64            kernel-modules-4.18.0-552.1.1.el8.x86_64           
+
+Complete!
+^[[root@ezechiel emaster]# um install -y \
+>   containers-common \
+>   device-mapper-devel \
+>   git \
+>   glib2-devel \
+>   glibc-devel \
+>   glibc-static \
+>   go \
+>   gpgme-devel \
+>   libassuan-devel \
+>   libgpg-error-devel \
+>   libseccomp-devel \
+>   libselinux-devel \
+>   pkgconfig \
+>   make \
+>   runc
+bash: um: command not found...
+^C
+[root@ezechiel emaster]# yum install -y \
+>   containers-common \
+>   device-mapper-devel \
+>   git \
+>   glib2-devel \
+>   glibc-devel \
+>   glibc-static \
+>   go \
+>   gpgme-devel \
+>   libassuan-devel \
+>   libgpg-error-devel \
+>   libseccomp-devel \
+>   libselinux-devel \
+>   pkgconfig \
+>   make \
+>   runc
+Last metadata expiration check: 0:21:51 ago on Mon 20 May 2024 05:56:47 PM EAT.
+Package containers-common-2:1-81.module_el8+968+fbb249c7.x86_64 is already installed.
+No match for argument: device-mapper-devel
+Package git-2.43.0-1.el8.x86_64 is already installed.
+Package glibc-devel-2.28-251.el8.x86_64 is already installed.
+No match for argument: glibc-static
+No match for argument: gpgme-devel
+No match for argument: libassuan-devel
+Package libselinux-devel-2.9-8.el8.x86_64 is already installed.
+Package pkgconf-pkg-config-1.4.2-1.el8.x86_64 is already installed.
+Package make-1:4.2.1-11.el8.x86_64 is already installed.
+Package runc-1:1.1.12-1.module_el8+885+7da147f3.x86_64 is already installed.
+Error: Unable to find a match: device-mapper-devel glibc-static gpgme-devel libassuan-devel
+[root@ezechiel emaster]# yum install pkgconf-pkg-config -y
+Last metadata expiration check: 0:23:03 ago on Mon 20 May 2024 05:56:47 PM EAT.
+Package pkgconf-pkg-config-1.4.2-1.el8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[root@ezechiel emaster]# um install -y gpgme-devel --enablerepo=powertools
+bash: um: command not found...
+[root@ezechiel emaster]# yum install -y gpgme-devel --enablerepo=powertools
+CentOS Stream 8 - PowerTools                                            252 kB/s | 5.0 MB     00:20    
+Last metadata expiration check: 0:00:06 ago on Mon 20 May 2024 06:21:01 PM EAT.
+Dependencies resolved.
+========================================================================================================
+ Package                       Architecture      Version                    Repository             Size
+========================================================================================================
+Installing:
+ gpgme-devel                   x86_64            1.13.1-12.el8              powertools            168 k
+Installing dependencies:
+ glib2-devel                   x86_64            2.56.4-163.el8             baseos                498 k
+ libassuan-devel               x86_64            2.5.1-3.el8                powertools             69 k
+ libgpg-error-devel            x86_64            1.31-1.el8                 baseos                 64 k
+ pcre-cpp                      x86_64            8.42-6.el8                 baseos                 47 k
+ pcre-devel                    x86_64            8.42-6.el8                 baseos                551 k
+ pcre-utf16                    x86_64            8.42-6.el8                 baseos                195 k
+ pcre-utf32                    x86_64            8.42-6.el8                 baseos                186 k
+
+Transaction Summary
+========================================================================================================
+Install  8 Packages
+
+Total download size: 1.7 M
+Installed size: 5.6 M
+Downloading Packages:
+(1/8): libgpg-error-devel-1.31-1.el8.x86_64.rpm                         9.2 kB/s |  64 kB     00:06    
+(2/8): pcre-cpp-8.42-6.el8.x86_64.rpm                                   6.8 kB/s |  47 kB     00:06    
+(3/8): glib2-devel-2.56.4-163.el8.x86_64.rpm                             64 kB/s | 498 kB     00:07    
+(4/8): pcre-utf16-8.42-6.el8.x86_64.rpm                                 208 kB/s | 195 kB     00:00    
+(5/8): pcre-utf32-8.42-6.el8.x86_64.rpm                                 533 kB/s | 186 kB     00:00    
+(6/8): pcre-devel-8.42-6.el8.x86_64.rpm                                 463 kB/s | 551 kB     00:01    
+(7/8): gpgme-devel-1.13.1-12.el8.x86_64.rpm                             436 kB/s | 168 kB     00:00    
+(8/8): libassuan-devel-2.5.1-3.el8.x86_64.rpm                           217 kB/s |  69 kB     00:00    
+--------------------------------------------------------------------------------------------------------
+Total                                                                    86 kB/s | 1.7 MB     00:20     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                1/1 
+  Installing       : libassuan-devel-2.5.1-3.el8.x86_64                                             1/8 
+  Running scriptlet: libassuan-devel-2.5.1-3.el8.x86_64                                             1/8 
+  Installing       : pcre-utf32-8.42-6.el8.x86_64                                                   2/8 
+  Installing       : pcre-utf16-8.42-6.el8.x86_64                                                   3/8 
+  Installing       : pcre-cpp-8.42-6.el8.x86_64                                                     4/8 
+  Installing       : pcre-devel-8.42-6.el8.x86_64                                                   5/8 
+  Installing       : glib2-devel-2.56.4-163.el8.x86_64                                              6/8 
+  Installing       : libgpg-error-devel-1.31-1.el8.x86_64                                           7/8 
+  Running scriptlet: libgpg-error-devel-1.31-1.el8.x86_64                                           7/8 
+  Installing       : gpgme-devel-1.13.1-12.el8.x86_64                                               8/8 
+  Running scriptlet: gpgme-devel-1.13.1-12.el8.x86_64                                               8/8 
+  Verifying        : glib2-devel-2.56.4-163.el8.x86_64                                              1/8 
+  Verifying        : libgpg-error-devel-1.31-1.el8.x86_64                                           2/8 
+  Verifying        : pcre-cpp-8.42-6.el8.x86_64                                                     3/8 
+  Verifying        : pcre-devel-8.42-6.el8.x86_64                                                   4/8 
+  Verifying        : pcre-utf16-8.42-6.el8.x86_64                                                   5/8 
+  Verifying        : pcre-utf32-8.42-6.el8.x86_64                                                   6/8 
+  Verifying        : gpgme-devel-1.13.1-12.el8.x86_64                                               7/8 
+  Verifying        : libassuan-devel-2.5.1-3.el8.x86_64                                             8/8 
+
+Installed:
+  glib2-devel-2.56.4-163.el8.x86_64                 gpgme-devel-1.13.1-12.el8.x86_64                   
+  libassuan-devel-2.5.1-3.el8.x86_64                libgpg-error-devel-1.31-1.el8.x86_64               
+  pcre-cpp-8.42-6.el8.x86_64                        pcre-devel-8.42-6.el8.x86_64                       
+  pcre-utf16-8.42-6.el8.x86_64                      pcre-utf32-8.42-6.el8.x86_64                       
+
+Complete!
+[root@ezechiel emaster]# yum install -y gpgme-devel --enablerepo=crb
+Error: Unknown repo: 'crb'
+[root@ezechiel emaster]# yum install -y gpgme-devel --enablerepo=crb
+Error: Unknown repo: 'crb'
+[root@ezechiel emaster]# KUBERNETES_VERSION=v1.30
+[root@ezechiel emaster]# PROJECT_PATH=prerelease:/main
+[root@ezechiel emaster]# cat <<EOF | tee /etc/yum.repos.d/kubernetes.repo
+> [kubernetes]
+> name=Kubernetes
+> baseurl=https://pkgs.k8s.io/core:/stable:/$KUBERNETES_VERSION/rpm/
+> enabled=1
+> gpgcheck=1
+> gpgkey=https://pkgs.k8s.io/core:/stable:/$KUBERNETES_VERSION/rpm/repodata/repomd.xml.key
+> EOF
+[kubernetes]
+name=Kubernetes
+baseurl=https://pkgs.k8s.io/core:/stable:/v1.30/rpm/
+enabled=1
+gpgcheck=1
+gpgkey=https://pkgs.k8s.io/core:/stable:/v1.30/rpm/repodata/repomd.xml.key
+[root@ezechiel emaster]# cat <<EOF | tee /etc/yum.repos.d/cri-o.repo
+> [cri-o]
+> name=CRI-O
+> baseurl=https://pkgs.k8s.io/addons:/cri-o:/$PROJECT_PATH/rpm/
+> enabled=1
+> gpgcheck=1
+> gpgkey=https://pkgs.k8s.io/addons:/cri-o:/$PROJECT_PATH/rpm/repodata/repomd.xml.key
+> EOF
+[cri-o]
+name=CRI-O
+baseurl=https://pkgs.k8s.io/addons:/cri-o:/prerelease:/main/rpm/
+enabled=1
+gpgcheck=1
+gpgkey=https://pkgs.k8s.io/addons:/cri-o:/prerelease:/main/rpm/repodata/repomd.xml.key
+[root@ezechiel emaster]# dnf install -y container-selinux
+CRI-O                                                                   223  B/s | 5.4 kB     00:24    
+Kubernetes                                                              322  B/s | 7.8 kB     00:24    
+Package container-selinux-2:2.229.0-2.module_el8+847+7863d4e6.noarch is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[root@ezechiel emaster]# dnf install -y cri-o kubelet kubeadm kubectl
+Last metadata expiration check: 0:06:08 ago on Mon 20 May 2024 06:27:11 PM EAT.
+Dependencies resolved.
+========================================================================================================
+ Package                        Architecture   Version                         Repository          Size
+========================================================================================================
+Installing:
+ cri-o                          x86_64         1.31.0~dev-150500.13.1          cri-o               19 M
+ kubeadm                        x86_64         1.30.1-150500.1.1               kubernetes          10 M
+ kubectl                        x86_64         1.30.1-150500.1.1               kubernetes          10 M
+ kubelet                        x86_64         1.30.1-150500.1.1               kubernetes          17 M
+Installing dependencies:
+ conntrack-tools                x86_64         1.4.4-11.el8                    baseos             204 k
+ cri-tools                      x86_64         1.30.0-150500.1.1               kubernetes         8.6 M
+ kubernetes-cni                 x86_64         1.4.0-150500.1.1                kubernetes         6.7 M
+ libnetfilter_cthelper          x86_64         1.0.0-15.el8                    baseos              24 k
+ libnetfilter_cttimeout         x86_64         1.0.0-11.el8                    baseos              24 k
+ libnetfilter_queue             x86_64         1.0.4-3.el8                     baseos              31 k
+ socat                          x86_64         1.7.4.1-1.el8                   appstream          323 k
+
+Transaction Summary
+========================================================================================================
+Install  11 Packages
+
+Total download size: 72 M
+Installed size: 364 M
+Downloading Packages:
+(1/11): libnetfilter_cthelper-1.0.0-15.el8.x86_64.rpm                   3.8 kB/s |  24 kB     00:06    
+(2/11): libnetfilter_cttimeout-1.0.0-11.el8.x86_64.rpm                   82 kB/s |  24 kB     00:00    
+(3/11): conntrack-tools-1.4.4-11.el8.x86_64.rpm                          30 kB/s | 204 kB     00:06    
+(4/11): libnetfilter_queue-1.0.4-3.el8.x86_64.rpm                        90 kB/s |  31 kB     00:00    
+(5/11): socat-1.7.4.1-1.el8.x86_64.rpm                                   44 kB/s | 323 kB     00:07    
+(6/11): kubeadm-1.30.1-150500.1.1.x86_64.rpm                            583 kB/s |  10 MB     00:17    
+(7/11): cri-tools-1.30.0-150500.1.1.x86_64.rpm                          480 kB/s | 8.6 MB     00:18    
+(8/11): cri-o-1.31.0~dev-150500.13.1.x86_64.rpm                         789 kB/s |  19 MB     00:24    
+(9/11): kubectl-1.30.1-150500.1.1.x86_64.rpm                            1.4 MB/s |  10 MB     00:07    
+(10/11): kubelet-1.30.1-150500.1.1.x86_64.rpm                           2.0 MB/s |  17 MB     00:08    
+(11/11): kubernetes-cni-1.4.0-150500.1.1.x86_64.rpm                     1.7 MB/s | 6.7 MB     00:03    
+--------------------------------------------------------------------------------------------------------
+Total                                                                   1.5 MB/s |  72 MB     00:47     
+CRI-O                                                                   239  B/s | 1.7 kB     00:07    
+Importing GPG key 0x9A296436:
+ Userid     : "isv:kubernetes OBS Project <isv:kubernetes@build.opensuse.org>"
+ Fingerprint: DE15 B144 86CD 377B 9E87 6E1A 2346 54DA 9A29 6436
+ From       : https://pkgs.k8s.io/addons:/cri-o:/prerelease:/main/rpm/repodata/repomd.xml.key
+Key imported successfully
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                1/1 
+  Installing       : kubernetes-cni-1.4.0-150500.1.1.x86_64                                        1/11 
+  Installing       : cri-tools-1.30.0-150500.1.1.x86_64                                            2/11 
+  Installing       : libnetfilter_queue-1.0.4-3.el8.x86_64                                         3/11 
+  Running scriptlet: libnetfilter_queue-1.0.4-3.el8.x86_64                                         3/11 
+  Installing       : libnetfilter_cttimeout-1.0.0-11.el8.x86_64                                    4/11 
+  Running scriptlet: libnetfilter_cttimeout-1.0.0-11.el8.x86_64                                    4/11 
+  Installing       : libnetfilter_cthelper-1.0.0-15.el8.x86_64                                     5/11 
+  Running scriptlet: libnetfilter_cthelper-1.0.0-15.el8.x86_64                                     5/11 
+  Installing       : conntrack-tools-1.4.4-11.el8.x86_64                                           6/11 
+  Running scriptlet: conntrack-tools-1.4.4-11.el8.x86_64                                           6/11 
+  Installing       : socat-1.7.4.1-1.el8.x86_64                                                    7/11 
+  Installing       : kubelet-1.30.1-150500.1.1.x86_64                                              8/11 
+  Running scriptlet: kubelet-1.30.1-150500.1.1.x86_64                                              8/11 
+  Installing       : kubeadm-1.30.1-150500.1.1.x86_64                                              9/11 
+  Installing       : cri-o-1.31.0~dev-150500.13.1.x86_64                                          10/11 
+  Running scriptlet: cri-o-1.31.0~dev-150500.13.1.x86_64                                          10/11 
+  Installing       : kubectl-1.30.1-150500.1.1.x86_64                                             11/11 
+  Running scriptlet: kubectl-1.30.1-150500.1.1.x86_64                                             11/11 
+  Verifying        : socat-1.7.4.1-1.el8.x86_64                                                    1/11 
+  Verifying        : conntrack-tools-1.4.4-11.el8.x86_64                                           2/11 
+  Verifying        : libnetfilter_cthelper-1.0.0-15.el8.x86_64                                     3/11 
+  Verifying        : libnetfilter_cttimeout-1.0.0-11.el8.x86_64                                    4/11 
+  Verifying        : libnetfilter_queue-1.0.4-3.el8.x86_64                                         5/11 
+  Verifying        : cri-o-1.31.0~dev-150500.13.1.x86_64                                           6/11 
+  Verifying        : cri-tools-1.30.0-150500.1.1.x86_64                                            7/11 
+  Verifying        : kubeadm-1.30.1-150500.1.1.x86_64                                              8/11 
+  Verifying        : kubectl-1.30.1-150500.1.1.x86_64                                              9/11 
+  Verifying        : kubelet-1.30.1-150500.1.1.x86_64                                             10/11 
+  Verifying        : kubernetes-cni-1.4.0-150500.1.1.x86_64                                       11/11 
+
+Installed:
+  conntrack-tools-1.4.4-11.el8.x86_64                 cri-o-1.31.0~dev-150500.13.1.x86_64               
+  cri-tools-1.30.0-150500.1.1.x86_64                  kubeadm-1.30.1-150500.1.1.x86_64                  
+  kubectl-1.30.1-150500.1.1.x86_64                    kubelet-1.30.1-150500.1.1.x86_64                  
+  kubernetes-cni-1.4.0-150500.1.1.x86_64              libnetfilter_cthelper-1.0.0-15.el8.x86_64         
+  libnetfilter_cttimeout-1.0.0-11.el8.x86_64          libnetfilter_queue-1.0.4-3.el8.x86_64             
+  socat-1.7.4.1-1.el8.x86_64                         
+
+Complete!
+[root@ezechiel emaster]# systemctl start crio.service
+[root@ezechiel emaster]# systemctl status crio.service
+● crio.service - Container Runtime Interface for OCI (CRI-O)
+   Loaded: loaded (/usr/lib/systemd/system/crio.service; disabled; vendor preset: disabled)
+   Active: active (running) since Mon 2024-05-20 18:37:26 EAT; 13min ago
+     Docs: https://github.com/cri-o/cri-o
+ Main PID: 74593 (crio)
+    Tasks: 7
+   Memory: 70.8M
+   CGroup: /system.slice/crio.service
+           └─74593 /usr/bin/crio
+
+May 20 18:37:25 ezechiel.mirror.com crio[74593]: time="2024-05-20 18:37:24.769595039+03:00" level=info >
+May 20 18:37:26 ezechiel.mirror.com crio[74593]: time="2024-05-20 18:37:26.407411872+03:00" level=warni>
+May 20 18:37:26 ezechiel.mirror.com crio[74593]: time="2024-05-20 18:37:26.409068147+03:00" level=info >
+May 20 18:37:26 ezechiel.mirror.com crio[74593]: time="2024-05-20 18:37:26.409106432+03:00" level=info >
+May 20 18:37:26 ezechiel.mirror.com crio[74593]: time="2024-05-20 18:37:26.409169129+03:00" level=info >
+May 20 18:37:26 ezechiel.mirror.com crio[74593]: time="2024-05-20 18:37:26.409270427+03:00" level=info >
+May 20 18:37:26 ezechiel.mirror.com crio[74593]: time="2024-05-20 18:37:26.409289459+03:00" level=info >
+May 20 18:37:26 ezechiel.mirror.com crio[74593]: time="2024-05-20 18:37:26.409296728+03:00" level=info >
+May 20 18:37:26 ezechiel.mirror.com crio[74593]: time="2024-05-20 18:37:26.409302902+03:00" level=info >
+May 20 18:37:26 ezechiel.mirror.com systemd[1]: Started Container Runtime Interface for OCI (CRI-O).
+[root@ezechiel emaster]# kubectl --version
+error: unknown flag: --version
+See 'kubectl --help' for usage.
+[root@ezechiel emaster]# kubectl --help
+kubectl controls the Kubernetes cluster manager.
+
+ Find more information at: https://kubernetes.io/docs/reference/kubectl/
+
+Basic Commands (Beginner):
+  create          Create a resource from a file or from stdin
+  expose          Take a replication controller, service, deployment or pod and expose it as a new
+Kubernetes service
+  run             Run a particular image on the cluster
+  set             Set specific features on objects
+
+Basic Commands (Intermediate):
+  explain         Get documentation for a resource
+  get             Display one or many resources
+  edit            Edit a resource on the server
+  delete          Delete resources by file names, stdin, resources and names, or by resources and
+label selector
+
+Deploy Commands:
+  rollout         Manage the rollout of a resource
+  scale           Set a new size for a deployment, replica set, or replication controller
+  autoscale       Auto-scale a deployment, replica set, stateful set, or replication controller
+
+Cluster Management Commands:
+  certificate     Modify certificate resources
+  cluster-info    Display cluster information
+  top             Display resource (CPU/memory) usage
+  cordon          Mark node as unschedulable
+  uncordon        Mark node as schedulable
+  drain           Drain node in preparation for maintenance
+  taint           Update the taints on one or more nodes
+
+Troubleshooting and Debugging Commands:
+  describe        Show details of a specific resource or group of resources
+  logs            Print the logs for a container in a pod
+  attach          Attach to a running container
+  exec            Execute a command in a container
+  port-forward    Forward one or more local ports to a pod
+  proxy           Run a proxy to the Kubernetes API server
+  cp              Copy files and directories to and from containers
+  auth            Inspect authorization
+  debug           Create debugging sessions for troubleshooting workloads and nodes
+  events          List events
+
+Advanced Commands:
+  diff            Diff the live version against a would-be applied version
+  apply           Apply a configuration to a resource by file name or stdin
+  patch           Update fields of a resource
+  replace         Replace a resource by file name or stdin
+  wait            Experimental: Wait for a specific condition on one or many resources
+  kustomize       Build a kustomization target from a directory or URL
+
+Settings Commands:
+  label           Update the labels on a resource
+  annotate        Update the annotations on a resource
+  completion      Output shell completion code for the specified shell (bash, zsh, fish, or
+powershell)
+
+Subcommands provided by plugins:
+
+Other Commands:
+  api-resources   Print the supported API resources on the server
+  api-versions    Print the supported API versions on the server, in the form of "group/version"
+  config          Modify kubeconfig files
+  plugin          Provides utilities for interacting with plugins
+  version         Print the client and server version information
+
+Usage:
+  kubectl [flags] [options]
+
+Use "kubectl <command> --help" for more information about a given command.
+Use "kubectl options" for a list of global command-line options (applies to all commands).
+[root@ezechiel emaster]# kubectl version
+Client Version: v1.30.1
+Kustomize Version: v5.0.4-0.20230601165947-6ce0bf390ce3
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+[root@ezechiel emaster]# cat /etc/resolv.conf
+# Generated by NetworkManager
+search mirror.com
+nameserver 192.168.1.254
+nameserver fe80::1%enp0s3
+[root@ezechiel emaster]# cat /etc/hosts 
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+[root@ezechiel emaster]# vim /etc/hosts 
+[root@ezechiel emaster]# nmcli connection show
+NAME    UUID                                  TYPE      DEVICE 
+enp0s3  0832f44f-4bb3-472d-9a7f-65763cadb119  ethernet  enp0s3 
+virbr0  6278d733-99fd-4e5d-8edb-c8df044ad260  bridge    virbr0 
+[root@ezechiel emaster]# ^C
+[root@ezechiel emaster]# 
+[root@ezechiel emaster]# sudo swapoff -a
+swapoff: /dev/dm-1: swapoff failed: Cannot allocate memory
+[root@ezechiel emaster]# sudo sed -i '/ swap / s/^/#/' /etc/fstab
+[root@ezechiel emaster]# systemctl stop firewalld
+[root@ezechiel emaster]# systemctl disable firewalld
+Removed /etc/systemd/system/multi-user.target.wants/firewalld.service.
+Removed /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service.
+[root@ezechiel emaster]# modeprobe overlay
+bash: modeprobe: command not found...
+^Z
+[1]+  Stopped                 modeprobe overlay
+[root@ezechiel emaster]# modprobe overlay
+[root@ezechiel emaster]# modprobe br_netfilter
+[root@ezechiel emaster]# cat /etc/sysconfig/selinux | grep SELINUX=permissive
+[root@ezechiel emaster]# setenforce 0
+[root@ezechiel emaster]# getenforce
+Permissive
+[root@ezechiel emaster]# vim /etc/sysctl.d/kubernetes.conf
+[root@ezechiel emaster]# cat /etc/sysctl.d/kubernetes.conf
+net.bridge.bridge-nf-call-ip6tables=1
+net.bridge.bridge-nf-call-iptables=1
+net.ipv4.ip_forward=1
+[root@ezechiel emaster]# sudo sysctl --system
+* Applying /usr/lib/sysctl.d/10-default-yama-scope.conf ...
+kernel.yama.ptrace_scope = 0
+* Applying /usr/lib/sysctl.d/50-coredump.conf ...
+kernel.core_pattern = |/usr/lib/systemd/systemd-coredump %P %u %g %s %t %c %h %e
+kernel.core_pipe_limit = 16
+* Applying /usr/lib/sysctl.d/50-default.conf ...
+kernel.sysrq = 16
+kernel.core_uses_pid = 1
+kernel.kptr_restrict = 1
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.conf.all.accept_source_route = 0
+net.ipv4.conf.all.promote_secondaries = 1
+net.core.default_qdisc = fq_codel
+fs.protected_hardlinks = 1
+fs.protected_symlinks = 1
+* Applying /usr/lib/sysctl.d/50-libkcapi-optmem_max.conf ...
+net.core.optmem_max = 81920
+* Applying /etc/sysctl.d/50-libreswan.conf ...
+net.ipv6.conf.default.accept_redirects = 0
+net.ipv6.conf.all.accept_redirects = 0
+net.ipv4.conf.default.send_redirects = 0
+net.ipv4.conf.default.accept_redirects = 0
+net.ipv4.conf.all.send_redirects = 0
+net.ipv4.conf.all.accept_redirects = 0
+* Applying /usr/lib/sysctl.d/50-pid-max.conf ...
+kernel.pid_max = 4194304
+* Applying /usr/lib/sysctl.d/60-libvirtd.conf ...
+fs.aio-max-nr = 1048576
+* Applying /usr/lib/sysctl.d/60-qemu-postcopy-migration.conf ...
+* Applying /etc/sysctl.d/99-sysctl.conf ...
+* Applying /etc/sysctl.d/kubernetes.conf ...
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.ipv4.ip_forward = 1
+* Applying /etc/sysctl.conf ...
+[root@ezechiel emaster]# sudo sysctl net.bridge.bridge-nf-call-ip6tables
+net.bridge.bridge-nf-call-ip6tables = 1
+[root@ezechiel emaster]# sudo sysctl net.bridge.bridge-nf-call-iptables
+net.bridge.bridge-nf-call-iptables = 1
+[root@ezechiel emaster]# sudo sysctl net.ipv4.ip_forward
+net.ipv4.ip_forward = 1
+[root@ezechiel emaster]# nmcli connection modify enp0s3 ipv4.addresses 10.0.2.17/24
+[root@ezechiel emaster]# nmcli connection modify enp0s3 ipv4.gateway 10.0.2.1
+[root@ezechiel emaster]# nmcli connection modify enp0s3 ipv4.dns "8.8.8.8 8.8.4.4"
+[root@ezechiel emaster]# nmcli connection modify enp0s3 ipv4.method manual
+[root@ezechiel emaster]# nmcli connection up enp0s3
+Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/3)
+[root@ezechiel emaster]# nmcli connection modify enp0s3 ipv4.addresses 10.0.2.15/24
+[root@ezechiel emaster]# nmcli connection modify enp0s3 ipv4.gateway 10.0.2.1
+[root@ezechiel emaster]# nmcli connection modify enp0s3 ipv4.dns "8.8.8.8 8.8.4.4"
+[root@ezechiel emaster]# nmcli connection modify enp0s3 ipv4.method manual
+[root@ezechiel emaster]# nmcli connection up enp0s3
+Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/4)
+[root@ezechiel emaster]# sudo yum install dnsmasq -y
+Last metadata expiration check: 1:35:26 ago on Mon 20 May 2024 06:27:11 PM EAT.
+Package dnsmasq-2.79-33.el8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[root@ezechiel emaster]# sudo nano /etc/dnsmasq.conf
+[root@ezechiel emaster]# ip addr show enp0s3
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:63:3d:57 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.2.15/24 brd 10.0.2.255 scope global noprefixroute enp0s3
+       valid_lft forever preferred_lft forever
+    inet6 2c0f:eb68:654:fd00:a00:27ff:fe63:3d57/64 scope global dynamic noprefixroute 
+       valid_lft 249sec preferred_lft 249sec
+    inet6 fe80::a00:27ff:fe63:3d57/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+[root@ezechiel emaster]# sudo systemctl restart dnsmasq
+[root@ezechiel emaster]# sudo systemctl enable dnsmasq
+Created symlink /etc/systemd/system/multi-user.target.wants/dnsmasq.service → /usr/lib/systemd/system/dnsmasq.service.
+[root@ezechiel emaster]# vim /etc/hosts
+[root@ezechiel emaster]# sudo nano /etc/resolv.conf
+[root@ezechiel emaster]# sudo hostnamectl set-hostname master
+[root@ezechiel emaster]# sudo nano /etc/resolv.conf
+[root@ezechiel emaster]# sudo nano /etc/NetworkManager/system-connections/enp0s3.nmconnection
+[root@ezechiel emaster]# sudo nano /etc/NetworkManager/system-connections/enp0s3.nmconnection
+[root@ezechiel emaster]# cat /etc/NetworkManager/system-connections/enp0s3.nmconnection
+[ipv4]
+method=manual
+addresses=10.0.2.15/24
+gateway=10.0.2.1
+dns=10.0.2.15;8.8.8.8;8.8.4.4;
+
+[root@ezechiel emaster]# sudo systemctl restart NetworkManager
+[root@ezechiel emaster]# vim /etc/dnsmasq.conf
+[root@ezechiel emaster]# tail /etc/dnsmasq.conf
+
+# Forward DNS queries to Google's DNS servers
+server=8.8.8.8
+server=8.8.4.4
+
+# Set up address-to-hostname mappings for your nodes
+address=/master/10.0.2.15
+address=/worker1/10.0.2.16
+address=/worker2/10.0.2.17
+
+[root@ezechiel emaster]# sudo systemctl restart dnsmasq
+[root@ezechiel emaster]# sudo systemctl enable dnsmasq
+[root@ezechiel emaster]# sudo rm -f /etc/ssh/ssh_host_*
+[root@ezechiel emaster]# sudo systemctl stop rsyslog
+[root@ezechiel emaster]# sudo rm -f /var/log/*
+rm: cannot remove '/var/log/anaconda': Is a directory
+rm: cannot remove '/var/log/audit': Is a directory
+rm: cannot remove '/var/log/chrony': Is a directory
+rm: cannot remove '/var/log/crio': Is a directory
+rm: cannot remove '/var/log/cups': Is a directory
+rm: cannot remove '/var/log/gdm': Is a directory
+rm: cannot remove '/var/log/glusterfs': Is a directory
+rm: cannot remove '/var/log/libvirt': Is a directory
+rm: cannot remove '/var/log/private': Is a directory
+rm: cannot remove '/var/log/qemu-ga': Is a directory
+rm: cannot remove '/var/log/samba': Is a directory
+rm: cannot remove '/var/log/speech-dispatcher': Is a directory
+rm: cannot remove '/var/log/sssd': Is a directory
+rm: cannot remove '/var/log/swtpm': Is a directory
+rm: cannot remove '/var/log/tuned': Is a directory
+[root@ezechiel emaster]# sudo systemctl start rsyslog
+[root@ezechiel emaster]# sudo rm -rf /etc/ssh/ssh_host_*
+[root@ezechiel emaster]# sudo rm -rf /var/log/*
+[root@ezechiel emaster]# 

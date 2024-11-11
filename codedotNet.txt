@@ -1,0 +1,93 @@
+[19:18, 3/11/2024] +250 787 741 477: <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="popularMaster.master.cs" Inherits="BOOKSELLING_MONDAY.popularMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        #menu_div{
+            background:#808080;
+            width:100%;
+            margin-top:-12px;
+            text-align:center;
+
+        }#menu_div ul{
+            padding:10px 0px 8px 10px;
+            width:auto;
+            margin-left:-5px;
+        }#menu_div ul li{
+            list-style-type:none;
+            display:inline;
+            padding-right:5px;
+        }#menu_div ul li a{
+            background:#b6ff00;
+            padding:7px 15px 8px 15px;
+            text-decoration:none;
+            color:#000000;
+        }#menu_div ul li a:hover{
+            background:#00ff21;
+            padding:7px 15px 8px 15px;
+            text-decoration:none;
+            color:#000000;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <div id="img_div">
+            <img src="flower.jpg" width="100%" height="220px"/>
+            <div id="menu_div">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Book</a></li>
+                    <li><a href="#">Borrower</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        </asp:ContentPlaceHolder>
+        <div>
+            <asp:Label ID="Label1" runat="server" Text="Copyright Monday"></asp:Label>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
+
+
+[19:54, 3/11/2024] +250 787 741 477: CREATE PROCEDURE Register_Book
+	@bookIdentifier nvarchar(50),
+	@bookName nvarchar(50),
+	@authorName nvarchar(50),
+	@publication int,
+	@units int
+AS
+BEGIN
+	INSERT INTO BookNew 
+	VALUES(@bookIdentifier,@bookName,@authorName,@publication,@units)
+END
+GO
+
+
+[20:05, 3/11/2024] +250 787 741 477: protected void Button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand cmd = new SqlCommand("Register_Book",con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@bookIdentifier", identifierTxt.Text);
+            cmd.Parameters.AddWithValue("@bookName", bookNameTxt.Text);
+            cmd.Parameters.AddWithValue("@authorName", authorTxt.Text);
+            cmd.Parameters.AddWithValue("@publication", publicationTxt.Text);
+            cmd.Parameters.AddWithValue("@units", unitsTxt.Text);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+            string successMessage = "alert('Registered with Success!');";
+            ClientScript.RegisterStartupScript(this.GetType(), "PopupScript", successMessage, true);
+
+        }

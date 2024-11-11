@@ -1,0 +1,48 @@
+Few steps to install tomcat 10+ on Ubuntu OS
+------------------------------------------
+
+Step 1 is to update the system
+- sudo apt update
+
+step 2 tomcat needs the default java development kit
+-sudo apt install default-jdk
+
+step 3 head to https://tomcat.apache.org/download-10.cgi and download the latest version of tomcat if stable of course.
+
+step 4 give your user all permissions to /opt directoty and then create tomcat directory anywhere you want. if that so, I prefer here /opt/tomcat
+- sudo chmod -R 777 /opt
+- sudo mkdir /opt/tomcat
+
+step 5 decompress the downloaded file in /opt/tomcat from the downloads
+- sudo cd ~/Downloads
+- sudo tar xzvf apache-tomcat-10.1.30.tar.gz -C /opt/tomcat/ --strip-components=1
+
+step 6 Finally start Apache Tomcat
+- sudo /opt/tomcat/bin/startup.sh
+
+step bonus open a new tab in browser and type in 
+- localhost:8080
+
+SEE THE SPARK FLY
+
+SETUP AND LOGIN INTO TOMCAT MANAGER
+
+step 1 please examine the file conf/tomcat-users.xml in your installation. That file must contain the credentials to let you use webapps
+- sudo nano /opt/tomcat/conf/tomcat-users.xml
+
+step 2 add these few users at the bottom in the xml file
+<role rolename="manager-gui" />
+<user username="manager" password="manager-password" roles="manager-gui" />
+
+<role rolename="admin-gui" />
+<user username="admin" password="admin-password" roles="manager-gui, admin-gui" />
+
+step 3 we all gotto edit the webapps/host-manager/META-INF/context.xml make to comment out the Vale tag, so that we can access our Tomcat from everywhere
+
+- <!--Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /-->
+
+step 4 and final restart Apache tomcat server
+- sudo /opt/tomcat/bin/shutdown.sh
+- sudo /opt/tomcat/bin/startup.sh
+.

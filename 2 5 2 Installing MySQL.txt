@@ -1,0 +1,372 @@
+2.5.2 Installing MySQL on Linux Using the MySQL APT Repository
+
+This section provides guidance on installing MySQL using the MySQL APT repository.
+Steps for a Fresh Installation of MySQL
+Note
+
+The following instructions assume that no version of MySQL (whether distributed by Oracle or other parties) has already been installed on your system; if that is not the case, follow the instructions given in Replacing a Native Distribution of MySQL Using the MySQL APT Repository or Replacing a MySQL Server Installed by a Direct deb Package Download instead.
+
+Adding the MySQL Apt Repository.  First, add the MySQL APT repository to your system's software repository list. Follow these steps:
+
+    Go to the download page for the MySQL APT repository at https://dev.mysql.com/downloads/repo/apt/.
+
+    Select and download the release package for your Linux distribution.
+
+    Although this is not required for each update, it does update MySQL repository information to include the current information, which includes adding a new LTS series.
+
+    Install the downloaded release package with the following command, replacing version-specific-package-name with the name of the downloaded package (preceded by its path, if you are not running the command inside the folder where the package is):
+
+    $> sudo dpkg -i /PATH/version-specific-package-name.deb
+
+    For example, for version w.x.y-z of the package, the command is:
+
+    $> sudo dpkg -i mysql-apt-config_w.x.y-z_all.deb
+
+    Note that the same package works on all supported Debian and Ubuntu platforms.
+
+    During the installation of the package, you will be asked to choose the versions of the MySQL server and other components (for example, the MySQL Workbench) that you want to install. If you are not sure which version to choose, do not change the default options selected for you. You can also choose none if you do not want a particular component to be installed. After making the choices for all components, choose Ok to finish the configuration and installation of the release package.
+    Note
+
+    The innovation track, which begins with MySQL 8.1, includes "-innovation-" in the component name.
+
+    You can always change your choices for the versions later; see Selecting a Major Release Version for instructions.
+
+    Update package information from the MySQL APT repository with the following command (this step is mandatory):
+
+    $> sudo apt-get update
+
+Instead of using the release package, you can also add and configure the MySQL APT repository manually; see Appendix A: Adding and Configuring the MySQL APT Repository Manually for details.
+Note
+
+Once the MySQL APT repository is enabled on your system, you will no longer be able to install any MySQL packages from your platform's native software repositories until the MySQL APT repository is disabled.
+Note
+
+Once the MySQL APT repository is enabled on your system, any system-wide upgrade by the apt-get upgrade command will automatically upgrade the MySQL packages on your system and also replace any native MySQL packages you installed from your Linux distribution's software repository, if APT finds replacements for them from within the MySQL APT repository.
+Selecting a Major Release Version
+
+By default, all installations and upgrades for your MySQL server and the other required components come from the release series of the major version you have selected during the installation of the configuration package (see Adding the MySQL Apt Repository). However, you can switch to another supported major release series at any time by reconfiguring the configuration package you have installed. Use the following command:
+
+$> sudo dpkg-reconfigure mysql-apt-config
+
+A dialogue box then asks you to choose the major release version you want. Make your selection and choose Ok. After returning to the command prompt, update package information from the MySQL APT repository with this command:
+
+$> sudo apt-get update
+
+The latest version in the selected series will then be installed when you use the apt-get install command next time.
+
+You can use the same method to change the version for any other MySQL component you want to install with the MySQL APT repository.
+Installing MySQL with APT
+
+Install MySQL by the following command:
+
+$> sudo apt-get install mysql-server
+
+This installs the package for the MySQL server, as well as the packages for the client and for the database common files.
+
+During the installation, you are asked to supply a password for the root user for your MySQL installation.
+
+Important
+
+Make sure you remember the root password you set. Users who want to set a password later can leave the password field blank in the dialogue box and just press Ok; in that case, root access to the server will be authenticated by Section 8.4.1.10, “Socket Peer-Credential Pluggable Authentication” for connections using a Unix socket file. You can set the root password later using the program mysql_secure_installation.
+
+Starting and Stopping the MySQL Server
+
+The MySQL server is started automatically after installation. You can check the status of the MySQL server with the following command:
+
+$> systemctl status mysql
+
+If the operating system is systemd enabled, standard systemctl (or alternatively, service with the arguments reversed) commands such as stop, start, status, and restart should be used to manage the MySQL server service. The mysql service is enabled by default, and it starts at system reboot. See Section 2.5.9, “Managing MySQL Server with systemd” for additional information.
+Note
+
+A few third-party native repository packages that have dependencies on the native MySQL packages may not work with the MySQL APT repository packages and should not be used together with them; these include akonadi-backend-mysql, handlersocket-mysql-5.5, and zoneminder.
+Installing Additional MySQL Products and Components with APT
+
+You can use APT to install individual components of MySQL from the MySQL APT repository. Assuming you already have the MySQL APT repository on your system's repository list (see Adding the MySQL Apt Repository for instructions), first, use the following command to get the latest package information from the MySQL APT repository:
+
+$> sudo apt-get update
+
+Install any packages of your choice with the following command, replacing package-name with name of the package to install:
+
+$> sudo apt-get install package-name
+
+For example, to install the MySQL Workbench:
+
+$> sudo apt-get install mysql-workbench-community
+
+To install the shared client libraries:
+
+$> sudo apt-get install libmysqlclient21
+
+Installing MySQL from Source with the MySQL APT Repository
+Note
+
+This feature is only supported on 64-bit systems.
+
+You can download the source code for MySQL and build it using the MySQL APT Repository:
+
+    Add the MySQL APT repository to your system's repository list and choose the major release series you want (see Adding the MySQL Apt Repository for instructions).
+
+    Update package information from the MySQL APT repository with the following command (this step is mandatory):
+
+    $> sudo apt-get update
+
+    Install packages that the build process depends on:
+
+    $> sudo apt-get build-dep mysql-server
+
+    Download the source code for the major components of MySQL and then build them (run this command in the folder in which you want the downloaded files and the builds to be located):
+
+    $> apt-get source -b mysql-server
+
+    deb packages for installing the various MySQL components are created.
+
+    Pick the deb packages for the MySQL components you need and install them with the command:
+
+    $> sudo dpkg -i package-name.deb
+
+    Notice that dependency relationships exist among the MySQL packages. For a basic installation of the MySQL server, install the database common files package, the client package, the client metapackage, the server package, and the server metapackage (in that order) with the following steps:
+
+        Preconfigure the MySQL server package with the following command:
+
+        $> sudo dpkg-preconfigure mysql-community-server_version-and-platform-specific-part.deb
+
+        You will be asked to provide a password for the root user for your MySQL installation; see important information on root password given in Installing MySQL with APT above. You might also be asked other questions regarding the installation.
+
+        Install the required packages with a single command:
+
+        $> sudo dpkg -i mysql-{common,community-client,client,community-server,server}_*.deb
+
+        If you are being warned of unmet dependencies by dpkg, you can fix them using apt-get:
+
+        sudo apt-get -f install
+
+    Here are where the files are installed on the system:
+
+        All configuration files (like my.cnf) are under /etc/mysql
+
+        All binaries, libraries, headers, etc., are under /usr/bin and /usr/sbin
+
+        The data directory is under /var/lib/mysql 
+
+See also information given in Starting and Stopping the MySQL Server.
+Upgrading MySQL with the MySQL APT Repository
+Notes
+
+    Before performing any upgrade to MySQL, follow carefully the instructions in Chapter 3, Upgrading MySQL. Among other instructions discussed there, it is especially important to back up your database before the upgrade.
+
+    The following instructions assume that MySQL has been installed on your system using the MySQL APT repository; if that is not the case, follow the instructions given in Replacing a Native Distribution of MySQL Using the MySQL APT Repository or Replacing a MySQL Server Installed by a Direct deb Package Download instead. Also notice that you cannot use the MySQL APT repository to upgrade a distribution of MySQL that you have installed from a nonnative software repository (for example, from MariaDB or Percona). 
+
+Use the MySQL APT repository to perform an in-place upgrade for your MySQL installation (that is, replacing the old version and then running the new version using the old data files) by following these steps:
+
+    Make sure you already have the MySQL APT repository on your system's repository list (see Adding the MySQL Apt Repository for instructions).
+
+    Make sure you have the most up-to-date package information on the MySQL APT repository by running:
+
+    $> sudo apt-get update
+
+    Note that, by default, the MySQL APT repository will update MySQL to the release series you have selected when you were adding the MySQL APT repository to your system. If you want to upgrade to another release series, select it by following the steps given in Selecting a Major Release Version.
+
+    As a general rule, to upgrade from one release series to another, go to the next series rather than skipping a series. For example, if you are currently running MySQL 5.7 and wish to upgrade to a newer series, upgrade to MySQL 8.0 first before upgrading to 8.4.
+    Important
+
+    In-place downgrading of MySQL is not supported by the MySQL APT repository. Follow the instructions in Chapter 4, Downgrading MySQL.
+
+    Upgrade MySQL by the following command:
+
+    $> sudo apt-get install mysql-server
+
+    The MySQL server, client, and the database common files are upgraded if newer versions are available. To upgrade any other MySQL package, use the same apt-get install command and supply the name for the package you want to upgrade:
+
+    $> sudo apt-get install package-name
+
+    To see the names of the packages you have installed from the MySQL APT repository, use the following command:
+
+    $> dpkg -l | grep mysql | grep ii
+
+    Note
+
+    If you perform a system-wide upgrade using apt-get upgrade, only the MySQL library and development packages are upgraded with newer versions (if available). To upgrade other components including the server, client, test suite, etc., use the apt-get install command.
+
+    The MySQL server always restarts after an update by APT. 
+
+Replacing a Native Distribution of MySQL Using the MySQL APT Repository
+
+Variants and forks of MySQL are distributed by different parties through their own software repositories or download sites. You can replace a native distribution of MySQL installed from your Linux platform's software repository with a distribution from the MySQL APT repository in a few steps.
+Note
+
+The MySQL APT repository can only replace distributions of MySQL maintained and distributed by Debian or Ubuntu. It cannot replace any MySQL forks found either inside or outside of the distributions' native repositories. To replace such MySQL forks, you have to uninstall them first before you install MySQL using the MySQL APT repository. Follow the instructions for uninstallation from the forks' distributors and, before you proceed, make sure you back up your data and you know how to restore them to a new server.
+Warning
+
+A few third-party native repository packages that have dependencies on the native MySQL packages may not work with the MySQL APT repository packages and should not be used together with them; these include akonadi-backend-mysql, handlersocket-mysql-5.5, and zoneminder.
+
+    Backing Up Your Database
+
+    To avoid loss of data, always back up your database before trying to replace your MySQL installation using the MySQL APT repository. See Chapter 9, Backup and Recovery for instructions.
+    Adding the MySQL APT Repository and Selecting a Release Series
+
+    Add the MySQL APT repository to your system's repository list and select the release series you want by following the instructions given in Adding the MySQL Apt Repository.
+    Replacing the Native Distribution by an APT Update
+
+    By design, the MySQL APT repository replaces your native distribution of MySQL when you perform upgrades on the MySQL packages. To perform the upgrades, follow the same instructions given in Step 4 in Upgrading MySQL with the MySQL APT Repository. 
+
+Warning
+
+Once the native distribution of MySQL has been replaced using the MySQL APT repository, purging the old MySQL packages from the native repository using the apt-get purge, apt-get remove --purge, or dpkg -P command might impact the newly installed MySQL server in various ways. Therefore, do not purge the old MySQL packages from the native repository packages.
+Replacing a MySQL Server Installed by a Direct deb Package Download
+
+deb packages from MySQL for installing the MySQL server and its components can either be downloaded from the MySQL Developer Zone's MySQL Download page or from the MySQL APT repository. The deb packages from the two sources are different, and they install and configure MySQL in different ways.
+
+If you have installed MySQL with the MySQL Developer Zone's deb packages and now want to replace the installation using the ones from the MySQL APT repository, follow these steps:
+
+    Back up your database. See Chapter 9, Backup and Recovery for instructions.
+
+    Follow the steps given previously for adding the MySQL APT repository.
+
+    Remove the old installation of MySQL by running:
+
+    $> sudo dpkg -P mysql
+
+    Install MySQL from the MySQL APT repository:
+
+    $> sudo apt-get install mysql-server
+
+    If needed, restore the data on the new MySQL installation. See Chapter 9, Backup and Recovery for instructions. 
+
+Removing MySQL with APT
+
+To uninstall the MySQL server and the related components that have been installed using the MySQL APT repository, first, remove the MySQL server using the following command:
+
+$> sudo apt-get remove mysql-server
+
+Then, remove any other software that was installed automatically with the MySQL server:
+
+$> sudo apt-get autoremove
+
+To uninstall other components, use the following command, replacing package-name with the name of the package of the component you want to remove:
+
+$> sudo apt-get remove package-name
+
+To see a list of packages you have installed from the MySQL APT repository, use the following command:
+
+$> dpkg -l | grep mysql | grep ii
+
+Special Notes on Upgrading the Shared Client Libraries
+
+You can install the shared client libraries from MySQL APT repository by the following command (see Installing Additional MySQL Products and Components with APT for more details):
+
+$> sudo apt-get install libmysqlclient21
+
+If you already have the shared client libraries installed from you Linux platform's software repository, it can be updated by the MySQL APT repository with its own package by using the same command (see Replacing the Native Distribution by an APT Update for more details).
+
+After updating MySQL using the APT repository, applications compiled with older versions of the shared client libraries should continue to work.
+
+If you recompile applications and dynamically link them with the updated libraries: as typical with new versions of shared libraries, any applications compiled using the updated, newer shared libraries might require those updated libraries on systems where the applications are deployed. If those libraries are not in place, the applications requiring the shared libraries might fail. Therefore, it is recommended that the packages for the shared libraries from MySQL be deployed on those systems. You can do this by adding the MySQL APT repository to the systems (see Adding the MySQL Apt Repository) and installing the latest shared client libraries using the command given at the beginning of this section.
+Installing MySQL NDB Cluster Using the APT Repository
+Notes
+
+    The MySQL APT repository supports installation of MySQL NDB Cluster on Debian and Ubuntu systems. For methods to install NDB Cluster on other Debian-based systems, see Installing NDB Cluster Using .deb Files.
+
+    If you already have the MySQL server or MySQL NDB Cluster installed on your system, make sure it is stopped and you have your data and configuration files backed up before proceeding. 
+
+    Adding the MySQL APT Repository for MySQL NDB Cluster
+
+    Follow the steps in Adding the MySQL Apt Repository to add the MySQL APT repository to your system's repository list. During the installation process of the configuration package, when you are asked which MySQL product you want to configure, choose “MySQL Server & Cluster”; when asked which version you wish to receive, choose “mysql-cluster-x.y.” After returning to the command prompt, go to Step 2 below.
+
+    If you already have the configuration package installed on your system, make sure it is up-to-date by running the following command:
+
+    $> sudo apt-get install mysql-apt-config
+
+    Then, use the same method described in Selecting a Major Release Version to select MySQL NDB Cluster for installation. When you are asked which MySQL product you want to configure, choose “MySQL Server & Cluster”; when asked which version you wish to receive, choose “mysql-cluster-x.y.” After returning to the command prompt, update package information from the MySQL APT repository with this command:
+
+    $> sudo apt-get update
+
+    Installing MySQL NDB Cluster
+
+    For a minimal installation of MySQL NDB Cluster, follow these steps:
+
+        Install the components for SQL nodes:
+
+        $> sudo apt-get install mysql-cluster-community-server
+
+        You will be asked to provide a password for the root user for your SQL node; see important information on the root password given in Installing MySQL with APT above. You might also be asked other questions regarding the installation.
+
+        Install the executables for management nodes:
+
+        $> sudo apt-get install mysql-cluster-community-management-server
+
+        Install the executables for data nodes:
+
+        $> sudo apt-get install mysql-cluster-community-data-node
+
+    Configuring and Starting MySQL NDB Cluster
+
+    See Section 25.3.3, “Initial Configuration of NDB Cluster” on how to configure MySQL NDB Cluster and Section 25.3.4, “Initial Startup of NDB Cluster” on how to start it for the first time. When following those instructions, adjust them according to the following details regarding the SQL nodes of your NDB Cluster installation:
+
+        All configuration files (like my.cnf) are under /etc/mysql
+
+        All binaries, libraries, headers, etc., are under /usr/bin and /usr/sbin
+
+        The data directory is /var/lib/mysql 
+
+Installing Additional MySQL NDB Cluster Products and Components
+
+You can use APT to install individual components and additional products of MySQL NDB Cluster from the MySQL APT repository. To do that, assuming you already have the MySQL APT repository on your system's repository list (see Adding the MySQL Apt Repository for MySQL NDB Cluster), follow the same steps given in Installing Additional MySQL Products and Components with APT.
+Note
+
+Known issue: Currently, not all components required for running the MySQL NDB Cluster test suite are installed automatically when you install the test suite package (mysql-cluster-community-test). Install the following packages with apt-get install before you run the test suite:
+
+    mysql-cluster-community-auto-installer
+
+    mysql-cluster-community-management-server
+
+    mysql-cluster-community-data-node
+
+    mysql-cluster-community-memcached
+
+    mysql-cluster-community-java
+
+    ndbclient-dev 
+
+Appendix A: Adding and Configuring the MySQL APT Repository Manually
+
+Here are the steps for adding manually the MySQL APT repository to your system's software repository list and configuring it, without using the release packages provided by MySQL:
+
+    Download the MySQL GPG Public key (see Section 2.1.4.2, “Signature Checking Using GnuPG” on how to do that) and save it to a file, without adding any spaces or special characters. Then, add the key to your system's GPG keyring with the following command:
+
+    $> sudo apt-key add path/to/signature-file
+
+    Alternatively, you can download the GPG key to your APT keyring directly using the apt-key utility:
+
+    $> sudo apt-key adv --keyserver pgp.mit.edu --recv-keys A8D3785C
+
+    Note
+
+    The KeyID for MySQL 8.0.36 and later release packages is A8D3785C, as shown above. For earlier MySQL releases, the keyID is 3A79BD29. Using an incorrect key can cause a key verification error.
+
+    Create a file named /etc/apt/sources.list.d/mysql.list, and put into it repository entries in the following format (this is not a command to execute):
+
+    deb http://repo.mysql.com/apt/{debian|ubuntu}/ {bookworm|jammy} {mysql-tools|mysql-8.4-lts|mysql-8.0}
+
+    Pick the relevant options for your repository set up:
+
+        Choose “debian” or “ubuntu” according to your platform.
+
+        Choose the appropriate version name for the version of your system; examples include “bookworm” (for Debian 12) and “jammy” (for Ubuntu 22.04).
+
+        For installing the MySQL server, client, and database common files, choose “mysql-8.4”, “mysql-8.0”, or “mysql-innovation” according to the MySQL series you want. To switch to another release series later, come back and adjust the entry with your new choice. This also includes access to tools such as MySQL Router and MySQL Shell.
+        Note
+
+        If you already have a version of MySQL installed on your system, do not choose a lower version at this step, or it might result in an unsupported downgrade operation.
+
+        Include “mysql-tools” to install a connector. 
+
+    For example, on the Ubuntu 22.04 platform use these lines in your mysql.list files to install MySQL 8.4 and the latest MySQL Connectors from the MySQL APT repository:
+
+    deb http://repo.mysql.com/apt/ubuntu/ jammy mysql-8.4 mysql-tools
+
+    Use the following command to get the most up-to-date package information from the MySQL APT repository:
+
+    $> sudo apt-get update
+
+You have configured your system to use the MySQL APT repository and are now ready to continue with Installing MySQL with APT or Installing Additional MySQL Products and Components with APT.
+

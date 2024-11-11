@@ -1,0 +1,157 @@
+SO TO TROUBLESHOOT THE KUBERNETES NODE AGENT KNOWN AS ::kubelet:: FOLLOW THIS STEP BELOW
+
+BUT I START I HAVE TO MAKE THAT I HAVE KUBERNETES UTILITIES(kubelet, kubectl, kubeadm) AND CRIO INSTALLED
+
+
+[root@master emaster]# dnf install -y cri-o kubelet kubeadm kubectl
+---------------- STD-OUT ----------------------
+Repository kubernetes is listed more than once in the configuration
+Last metadata expiration check: 3:57:04 ago on Mon 20 May 2024 11:32:25 AM EDT.
+Package cri-o-1.31.0~dev-150500.13.1.x86_64 is already installed.
+Package kubelet-1.29.5-150500.1.1.x86_64 is already installed.
+Package kubeadm-1.29.5-150500.1.1.x86_64 is already installed.
+Package kubectl-1.29.5-150500.1.1.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+------------------------------------
+
+ALRIGHT NOW LET'S DO TRY TO DEBUG KUBELET
+
+# Disable swap temporarily and permanently
+# Kubernetes requires swap to be disabled. Ensure swap is turned off.
+
+
+# To permanently disable swap, you can comment out the swap line in /etc/fstab. 
+# THE LINE TO COMMENT => /dev/mapper/centos-swap swap swap defaults 0 0
+
+[root@master emaster]# sudo swapoff -a
+[root@master emaster]# sudo nano /etc/fstab
+
+=========================
+
+  GNU nano 2.9.8                                       /etc/fstab                                                 
+
+
+#
+# /etc/fstab
+# Created by anaconda on Mon May 20 12:55:44 2024
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk/'.
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info.
+#
+# After editing this file, run 'systemctl daemon-reload' to update systemd
+# units generated from this file.
+#
+/dev/mapper/cs-root     /                       xfs     defaults        0 0
+UUID=603aff01-e95a-4e17-ab54-19e4fde0ba65 /boot                   xfs     defaults        0 0
+# /dev/mapper/cs-swap     none                    swap    defaults        0 0
+
+=========================
+
+# Ensure CRI-O is running
+sudo systemctl enable crio
+sudo systemctl start crio
+sudo systemctl status crio
+
+[root@master emaster]# sudo systemctl status crio
+---------------- STD-OUT ------------------
+ crio.service - Container Runtime Interface for OCI (CRI-O)
+   Loaded: loaded (/usr/lib/systemd/system/crio.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2024-05-21 01:49:43 EAT; 6min ago
+     Docs: https://github.com/cri-o/cri-o
+ Main PID: 21987 (crio)
+    Tasks: 7
+   Memory: 29.9M
+   CGroup: /system.slice/crio.service
+           └─21987 /usr/bin/crio
+...
+---------------------------------------
+
+
+
+[root@master emaster]# sudo systemctl daemon-reload
+[root@master emaster]# sudo systemctl restart kubelet
+[root@master emaster]# sudo systemctl status kubelet
+---------------- STD-OUT ----------------
+● kubelet.service - kubelet: The Kubernetes Node Agent
+   Loaded: loaded (/usr/lib/systemd/system/kubelet.service; enabled; vendor preset: disabled)
+  Drop-In: /usr/lib/systemd/system/kubelet.service.d
+           └─10-kubeadm.conf
+   Active: activating (auto-restart) (Result: exit-code) since Tue 2024-05-21 02:00:00 EAT; 2s ago
+     Docs: https://kubernetes.io/docs/
+  Process: 22679 ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $>
+ Main PID: 22679 (code=exited, status=1/FAILURE)
+
+May 21 02:00:00 master systemd[1]: kubelet.service: Main process exited, code=exited, status=1/FAILURE
+May 21 02:00:00 master systemd[1]: kubelet.service: Failed with result 'exit-code'.
+----------------------------------------
+
+# Check and edit kubelet configuration
+sudo nano /usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf
+
+====================================
+
+  GNU nano 2.9.8               /usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf                          
+
+# Note: This dropin only works with kubeadm and kubelet v1.11+
+[Service]
+Environment="KUBELET_KUBECONFIG_ARGS=--bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/$
+Environment="KUBELET_CONFIG_ARGS=--config=/var/lib/kubelet/config.yaml"
+# This is a file that "kubeadm init" and "kubeadm join" generates at runtime, populating the KUBELET_KUBEADM_ARGS$
+EnvironmentFile=-/var/lib/kubelet/kubeadm-flags.env
+# This is a file that the user can use for overrides of the kubelet args as a last resort. Preferably, the user s$
+# the .NodeRegistration.KubeletExtraArgs object in the configuration files instead. KUBELET_EXTRA_ARGS should be $
+EnvironmentFile=-/etc/sysconfig/kubelet
+ExecStart=
+ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $KUBELET_EXTRA_ARGS
+
+==================================
+
+# I will verify the configuration path:
+
+[root@master emaster]# ls -l /var/lib/kubelet/config.yaml
+------------ STD-OUT ----------------
+ls: cannot access '/var/lib/kubelet/config.yaml': No such file or directory
+------------------------------------
+
+# Generate Configuration File (if needed):
+
+[root@master emaster]# sudo kubeadm init phase kubelet-start
+----------------- STD-OUT ------------------
+W0521 02:03:39.774787   22909 version.go:104] could not fetch a Kubernetes version from the internet: unable to get URL "https://dl.k8s.io/release/stable-1.txt": Get "https://dl.k8s.io/release/stable-1.txt": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+W0521 02:03:39.774922   22909 version.go:105] falling back to the local client version: v1.30.1
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Starting the kubelet
+----------------------------------------
+
+# I Will Set Correct Permissions:
+
+[root@master emaster]# sudo chmod 644 /var/lib/kubelet/config.yaml
+
+# Restart Kubelet:
+
+[root@master emaster]# sudo systemctl daemon-reload
+[root@master emaster]# sudo systemctl restart kubelet
+[root@master emaster]# sudo systemctl status kubelet
+---------------- STD-OUT ---------------------
+● kubelet.service - kubelet: The Kubernetes Node Agent
+   Loaded: loaded (/usr/lib/systemd/system/kubelet.service; enabled; vendor preset: disabled)
+  Drop-In: /usr/lib/systemd/system/kubelet.service.d
+           └─10-kubeadm.conf
+   Active: active (running) since Tue 2024-05-21 02:05:46 EAT; 907ms ago
+     Docs: https://kubernetes.io/docs/
+ Main PID: 23112 (kubelet)
+    Tasks: 1 (limit: 7852)
+   Memory: 4.5M
+   CGroup: /system.slice/kubelet.service
+           └─23112 /usr/bin/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/e>
+
+May 21 02:05:46 master systemd[1]: kubelet.service: Succeeded.
+May 21 02:05:46 master systemd[1]: Stopped kubelet: The Kubernetes Node Agent.
+May 21 02:05:46 master systemd[1]: Started kubelet: The Kubernetes Node Agent.
+------------------------------------------------
+
+NOW THAT WE HAVE KUBELET & CRI-O RUNNING
+LET'S MOVE ON

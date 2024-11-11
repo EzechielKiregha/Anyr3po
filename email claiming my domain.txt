@@ -1,0 +1,15 @@
+Dear TechSquad,
+
+My name is Ezechiel Kiregha, and I recently registered for the GitHub Student Developer Pack. As part of the benefits, I was offered a free .tech domain. However, I encountered an issue when trying to claim the domain.
+
+Initially, I created an account on get.tech using the same email address that I used for registering for the GitHub Student Developer Pack. Unfortunately, I did not immediately claim my .tech domain at that time.
+
+Later, when I realized that I did not need to create an account to claim the domain, I attempted to check out the domain using my GitHub account. However, I received a message stating that a domain had already been redeemed for that email address.
+
+I would like to inquire if there is a way to resolve this issue and claim my .tech domain. Additionally, I would like to know if a domain can still be claimed if a student tried to get a domain but did not confirm the payment.
+
+Thank you for your assistance in this matter. I look forward to your response.
+
+Sincerely,
+
+Ezechiel Kiregha

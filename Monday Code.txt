@@ -1,0 +1,130 @@
+[19:36, 3/18/2024] +250 787 741 477: <div class="container">
+    <div class="alert alert-info">
+
+    </div>
+
+    <form method="post">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title" />
+        </div>
+        <div class="form-group">
+            <label for="title">Body</label>
+            <textarea class="form-control" name="body" rows="5"></textarea>
+        </div>
+
+        <button class="btn btn-primary mt-4" type="submit">Post</button>
+    </form>
+</div>
+[19:55, 3/18/2024] +250 787 741 477: public class CreateModel : PageModel
+{
+    // to track messages
+    public string message = "";
+
+    // instantiate BlogPost
+    BlogPost blogPost = new BlogPost();
+
+    public void OnPost()
+    {
+        try
+        {
+
+        } catch(Exception ex)
+        {
+            message = ex.Message;
+        }
+    }
+}
+
+// class with columns we have
+public class BlogPost
+{
+    public int? blog_id { get; set; }
+    public string? title { get; set; }
+    public string? post { get; set; }
+    public DateTime postDate { get; set; }
+    public int? blogger { get; set; }
+}
+[20:26, 3/18/2024] +250 787 741 477: try
+{
+    // getting values from html form
+    blogPost.title = Request.Form["title"];
+    blogPost.post = Request.Form["body"];
+    blogPost.blogger = 2;
+
+    // get connection string
+    string connString = _configuration.GetConnectionString("myConexString");
+    // sql connection
+    using(SqlConnection con = new SqlConnection(connString))
+    {
+        // query
+        string qry = "INSERT INTO posts (title, post, blogger) VALUES (@v_title, @v_body, @v_blogger)";
+
+        // open connex
+        con.Open();
+        using(SqlCommand cmd = new SqlCommand(qry, con))
+        {
+            // pass the values
+            cmd.Parameters.AddWithValue("@v_title", blogPost.title);
+            cmd.Parameters.AddWithValue("@v_body", blogPost.post);
+            cmd.Pa…
+[20:54, 3/18/2024] +250 787 741 477: <div class="container">
+    <h3>Monday blogs</h3>
+
+    @if (Model.message.Length > 0)
+    {
+        <div class="alert alert-info">
+            @Model.message
+        </div>
+    }
+
+    <div class="row gap-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"></h4>
+                <p class="card-text"></p>
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+
+                <a href="#" class="card-link text-warning">Edit</a>
+                <a href="#" class="card-link text-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+[21:07, 3/18/2024] +250 787 741 477: public string message = "";
+public List<BlogPost> postList = new List<BlogPost>();
+
+// load blogs method
+public void loadBlogs()
+{
+    try
+    {
+        string connString = "Data Source=DESKTOP-QV37GS8;Initial Catalog=MONASPCOREDB;Integrated Security=True;";
+
+        using (SqlConnection con = new SqlConnection(connString))
+        {
+            // query
+            string qry = "INSERT INTO posts (title, post, blogger) VALUES (@v_title, @v_body, @v_blogger)";
+
+            // open connex
+            con.Open();
+            using (SqlCommand cmd = new SqlCommand(qry, con))
+            {
+                using(SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    // read blogs
+                    while (reader.Read())
+               …
+[21:10, 3/18/2024] +250 787 741 477: @foreach (var blog in Model.postList)
+{
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">@blog.title</h4>
+            <p class="card-text">@blog.post</p>
+            <h6 class="card-subtitle mb-2 text-muted"></h6>
+
+            <a href="#" class="card-link text-warning">Edit</a>
+            <a href="#" class="card-link text-danger">Delete</a>
+        </div>
+    </div>
+}

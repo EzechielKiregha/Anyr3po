@@ -1,0 +1,17 @@
+Assignment on Kubernates administration
+==========================
+1. creating three machine in virtualbox or vimware (if you want you use another
+hupervisor tool). these three machine are lunix centos version 8+
+2. one machine will a master nodes
+3. 2 machine will be slaves or worker nodes
+4. each machine should have a username or password
+5. All these nodes should be having static ip
+6. configure and install kubernates cluster
+7. check for swap partition for all three machines
+8. Go to directory /etc/yum.repos.d/ and try to verify for kubernetes.repo and crio.repo on all three machines
+9. Install the crio package on all three machines
+10. Activate crio service
+11. Now install packages kubelet,kubectl,kubeadm on all the machines and enable the kubelet serv
+12. Started the kubelet service on master machine 
+13. install loadbalancer on kubernetes
+14. Create pod

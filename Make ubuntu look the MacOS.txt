@@ -1,0 +1,65 @@
+Make ubuntu look the MacOS Ventura
+
+step 1 update the packages list
+- sudo apt update
+
+step 2 install timeshift for take snapshots the system state for backup if something went wrong
+- sudo apt install timeshift
+
+step 3 SNAPSHOT : 
+-> open the timeshift app
+-> select the snapshot type, I chose RSYNC, then go next
+-> select snapshot location, next
+-> disable the schedule to have a snapshot (untick all), next
+-> include all files in the root dir, then next and finish
+
+step 4 in the timeshift-gtk create a snapshot
+-> Create and wait it finishes
+
+step 5 install the gnome shell extension manager
+- sudo apt install gnome-shell-extension-manager
+
+step 6 install the gnome tweaks and git
+- sudo apt install gnome-tweaks
+- sudo apt install git
+
+step 7 Clone this theme repository https://github.com/vinceliuice/WhiteSur-gtk-theme.git or download the zip file if the cloning kept going slow and get interrupt 
+- git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
+
+step 8 install the theme, if you downloaded the the zip repo do this :
+- mv Downloads/WhiteSur-gtk-theme.zip .
+- unzip WhiteSur-gtk-theme.zip
+- cd WhiteSur-gtk-theme
+- ./install.sh -m -t all -l -N stable --gnome-shell --round
+- sudo ./tweaks.sh -g
+and you cloned it :
+- cd WhiteSur-gtk-theme
+- ./install.sh -m -t all -l -N stable --gnome-shell --round
+- sudo ./tweaks.sh -g
+
+step 9 go to this link https://github.com/USBA/Cupertino-Sonoma-iCons and in the about section there is a link https://www.pling.com/p/1102582/, click on it.
+
+step 10 go to file(4) download the first cupertino icons. and once done, click on the compressed file (tar.xz or zip) to open it in the file roller, then extract to new directory name '.icons' in the home directory, show hidden files (ctrl + h).
+
+step 11 show apps and look for Extension Manager, in there browse, search 'user themes' and install it.
+
+step 12 show apps and look for tweaks, in there go to
+1. appearance tab :
+-> change icons to cupertino-ventura
+-> change shell to WhiteSur-Dark
+2. windows tab :
+-> choose left for title tab location
+
+stet 13 to make it look even better, in Extension Manager browse, search 
+1. 'blur my shell'
+2. 'Quick Settings Tweaker'
+3. 'Compiz alike magic lamp effect' and install them.
+
+step 14 and final 
+-> open settings
+-> ubuntu desktop
+-> change dock position from left to bottom
+-> finally disable mode panel.
+
+
+
